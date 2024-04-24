@@ -1,5 +1,6 @@
 ---
-jupytext:
+jupytext: 
+  title: este es un titulo 
   formats: md:myst
   text_representation:
     extension: .md
