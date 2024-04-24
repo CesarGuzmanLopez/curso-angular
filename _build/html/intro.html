@@ -1,0 +1,680 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introducción a Angular 🅰️ &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introducción a Angular 🅰️
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introducción a Angular 🅰️</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-del-ambiente-node-npm">Instalación del Ambiente (Node npm) 🛠️</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux 🐧</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows 🖥️</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-typescript-y-angular">Instalación de typescript y angular 📦</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambientes-de-desarrollo-de-angular-elige-tu-propia-aventura">Ambientes de Desarrollo de Angular: Elige tu Propia Aventura 🚀</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-recomendado-la-eleccion-de-las-personas-cotidianas">1. <strong>VSCode(Recomendado): La Elección de las personas Cotidianas</strong> 💻</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#webstorm-la-eleccion-de-los-amantes-de-intelij-idea">2. <strong>WebStorm: La Elección de los amantes de InteliJ IDEA</strong> 🌊</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-ide-la-eleccion-de-los-sonadores-eclipse">3. <strong>Angular IDE: La Elección de los Soñadores Eclipse</strong> 🌟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neovim-para-los-valientes-exploradores-de-la-terminal">4. <strong>Neovim: Para los Valientes Exploradores de la Terminal</strong> ⚔️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bloc-de-notas-para-los-viajeros-sin-conexion-a-internet">5. <strong>Bloc de Notas: Para los Viajeros Sin Conexión a Internet</strong> 📝</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typescript-scss-y-angular">TypeScript, SCSS y Angular</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typescript">TypeScript 💻</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scss-sass">SCSS (Sass) 🎨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-angular">¿Qué es Angular? 🅰️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales:</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <p>Cesar Gerardo Guzman Lopez</p>
+<section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-angular">
+<h1>Introducción a Angular 🅰️<a class="headerlink" href="#introduccion-a-angular" title="Link to this heading">#</a></h1>
+<p>Primero que nada configurar tu entorno de desarrollo para conocer el mundo de Angular. 🚀</p>
+<section id="instalacion-del-ambiente-node-npm">
+<h2>Instalación del Ambiente (Node npm) 🛠️<a class="headerlink" href="#instalacion-del-ambiente-node-npm" title="Link to this heading">#</a></h2>
+<section id="linux">
+<h3>Linux 🐧<a class="headerlink" href="#linux" title="Link to this heading">#</a></h3>
+<p>¡Vamos a empezar! Para instalar Angular en Linux, primero necesitamos Node.js y npm. Puedes instalarlos usando tu gestor de paquetes favorito. Por ejemplo, en Debian, Ubuntu y similares:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">apt</span> <span class="n">install</span> <span class="n">nodejs</span> <span class="n">npm</span>
+</pre></div>
+</div>
+<p>o fedora, Centos 8, y similares:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">dnf</span> <span class="n">update</span>
+<span class="n">sudo</span> <span class="n">dnf</span> <span class="n">install</span> <span class="n">nodejs</span> <span class="o">-</span><span class="n">y</span>
+</pre></div>
+</div>
+</section>
+<section id="windows">
+<h3>Windows 🖥️<a class="headerlink" href="#windows" title="Link to this heading">#</a></h3>
+<p>Para instalar Angular en Windows, también necesitas Node.js y npm. Puedes descargar e instalar Node.js desde su sitio web oficial: <a class="reference external" href="https://nodejs.org/">Node.js</a>.</p>
+<p>Después de instalar Node.js, abre una ventana de terminal (powershell) y comprobar su instalacion con</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="instalacion-de-typescript-y-angular">
+<h2>Instalación de typescript y angular 📦<a class="headerlink" href="#instalacion-de-typescript-y-angular" title="Link to this heading">#</a></h2>
+<p>Luego, puedes instalar typescript y Angular CLI (Command Line Interface) globalmente usando npm:</p>
+<p>en linux</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="nd">@angular</span><span class="o">/</span><span class="n">cli</span>
+<span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">typescript</span>
+</pre></div>
+</div>
+<p>o Windows</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="nd">@angular</span><span class="o">/</span><span class="n">cli</span>
+<span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="n">g</span> <span class="n">typescript</span>
+
+</pre></div>
+</div>
+</section>
+<section id="ambientes-de-desarrollo-de-angular-elige-tu-propia-aventura">
+<h2>Ambientes de Desarrollo de Angular: Elige tu Propia Aventura 🚀<a class="headerlink" href="#ambientes-de-desarrollo-de-angular-elige-tu-propia-aventura" title="Link to this heading">#</a></h2>
+<p>Angular, como todo gran viaje, comienza con la elección de tu herramienta de desarrollo.</p>
+<section id="vscode-recomendado-la-eleccion-de-las-personas-cotidianas">
+<h3>1. <strong>VSCode(Recomendado): La Elección de las personas Cotidianas</strong> 💻<a class="headerlink" href="#vscode-recomendado-la-eleccion-de-las-personas-cotidianas" title="Link to this heading">#</a></h3>
+<p>Si eres un héroe cotidiano buscando una herramienta confiable y versátil, Visual Studio Code (VSCode) es tu mejor compañero de viaje. Simplemente instálalo y ¡listo para la acción!</p>
+<p><strong>Pasos de Instalación:</strong></p>
+<ul class="simple">
+<li><p>Descarga VSCode <a class="reference external" href="https://code.visualstudio.com/">aquí</a>.</p></li>
+<li><p>crea un projecto de angular</p></li>
+<li><p>instala los plugins recomendados</p></li>
+<li><p>¡Abre el editor y estarás listo para empezar tu aventura Angular!</p></li>
+</ul>
+</section>
+<section id="webstorm-la-eleccion-de-los-amantes-de-intelij-idea">
+<h3>2. <strong>WebStorm: La Elección de los amantes de InteliJ IDEA</strong> 🌊<a class="headerlink" href="#webstorm-la-eleccion-de-los-amantes-de-intelij-idea" title="Link to this heading">#</a></h3>
+<p>Para aquellos que prefieren adentrarse en las profundidades del código con un compañero de confianza, WebStorm es tu brújula en este vasto mar digital.</p>
+<p><strong>Pasos de Instalación:</strong></p>
+<ul class="simple">
+<li><p>Descarga WebStorm <a class="reference external" href="https://www.jetbrains.com/webstorm/download/">aquí</a>.</p></li>
+<li><p>Sigue las instrucciones de instalación.</p></li>
+</ul>
+</section>
+<section id="angular-ide-la-eleccion-de-los-sonadores-eclipse">
+<h3>3. <strong>Angular IDE: La Elección de los Soñadores Eclipse</strong> 🌟<a class="headerlink" href="#angular-ide-la-eleccion-de-los-sonadores-eclipse" title="Link to this heading">#</a></h3>
+<p>Para aquellos que encuentran su paz en la familiaridad de Eclipse, Angular IDE es como una suave brisa que te guiará a través de las complejidades del desarrollo Angular.</p>
+<p><strong>Pasos de Instalación:</strong></p>
+<ul class="simple">
+<li><p>Descarga Angular IDE <a class="reference external" href="https://www.genuitec.com/products/angular-ide/download/">aquí</a>.</p></li>
+<li><p>Sigue las instrucciones de instalación y prepárate para sumergirte en el mundo de Angular dentro de Eclipse.</p></li>
+</ul>
+</section>
+<section id="neovim-para-los-valientes-exploradores-de-la-terminal">
+<h3>4. <strong>Neovim: Para los Valientes Exploradores de la Terminal</strong> ⚔️<a class="headerlink" href="#neovim-para-los-valientes-exploradores-de-la-terminal" title="Link to this heading">#</a></h3>
+<p>Para aquellos que desean emprender una aventura más desafiante, Neovim es como una montaña que espera ser escalada, ofreciendo grandes recompensas a aquellos que se atrevan a dominarlo.</p>
+<p><strong>Pasos de Instalación:</strong></p>
+<ul class="simple">
+<li><p>Instala Neovim en tu sistema. Puedes encontrar instrucciones específicas para tu sistema <a class="reference external" href="https://github.com/neovim/neovim/wiki/Installing-Neovim">aquí</a>.</p></li>
+<li><p>Prepárate para sumergirte en el mundo de Angular con Neovim como tu compañero de batalla.</p></li>
+</ul>
+</section>
+<section id="bloc-de-notas-para-los-viajeros-sin-conexion-a-internet">
+<h3>5. <strong>Bloc de Notas: Para los Viajeros Sin Conexión a Internet</strong> 📝<a class="headerlink" href="#bloc-de-notas-para-los-viajeros-sin-conexion-a-internet" title="Link to this heading">#</a></h3>
+<p>Para aquellos que se encuentran en tierras desconocidas sin conexión a internet, el humilde Bloc de Notas es tu salvador en este mundo digitalizado.</p>
+<p><strong>Pasos de Instalación:</strong></p>
+<ul class="simple">
+<li><p>¡Abre el Bloc de Notas en tu sistema operativo!</p></li>
+<li><p>¡Empieza a escribir tu código Angular con valentía y determinación!
+<strong>Desventaja</strong>
+No te auto completara codigo y dependiendo del editor tampoco te remarcara la sintaxis</p></li>
+</ul>
+</section>
+</section>
+<section id="typescript-scss-y-angular">
+<h2>TypeScript, SCSS y Angular<a class="headerlink" href="#typescript-scss-y-angular" title="Link to this heading">#</a></h2>
+<section id="typescript">
+<h3>TypeScript 💻<a class="headerlink" href="#typescript" title="Link to this heading">#</a></h3>
+<p><strong>TypeScript</strong> es un lenguaje de programación de código abierto desarrollado y mantenido por Microsoft. Es un superset de JavaScript que agrega características de tipado estático y otras características modernas al lenguaje. TypeScript se compila a JavaScript estándar y puede ser utilizado en lugar de JavaScript en el desarrollo de aplicaciones web y de otro tipo. Sus características principales incluyen:</p>
+<ul class="simple">
+<li><p><strong>Tipado Estático:</strong> TypeScript permite la definición de tipos estáticos para variables, parámetros de función, propiedades de objetos, etc., lo que ayuda a atrapar errores en tiempo de compilación y mejorar la calidad del código. 🛠️</p></li>
+<li><p><strong>Características Modernas:</strong> TypeScript incluye muchas características modernas de JavaScript, como soporte para clases, módulos, funciones de flecha, desestructuración, entre otros. 🔥</p></li>
+<li><p><strong>Compatibilidad con ECMAScript:</strong> TypeScript es compatible con las especificaciones ECMAScript y puede compilar código que cumpla con versiones específicas de ECMAScript, lo que permite el uso de las últimas características de JavaScript mientras se mantiene la compatibilidad con navegadores y entornos más antiguos. 🚀</p></li>
+</ul>
+</section>
+<section id="scss-sass">
+<h3>SCSS (Sass) 🎨<a class="headerlink" href="#scss-sass" title="Link to this heading">#</a></h3>
+<p><strong>SCSS</strong> (Sassy CSS) es una extensión del lenguaje CSS que añade características como variables, anidamiento, mixins, funciones, entre otros. SCSS es un preprocesador de CSS que se compila a CSS estándar antes de ser interpretado por el navegador. Sus características principales incluyen:</p>
+<ul class="simple">
+<li><p><strong>Variables:</strong> SCSS permite definir variables que pueden ser reutilizadas en todo el archivo CSS, lo que facilita la gestión de estilos y la mantenibilidad del código. 🎈</p></li>
+<li><p><strong>Anidamiento:</strong> SCSS permite anidar selectores CSS dentro de otros selectores, lo que ayuda a organizar el código de manera más legible y a evitar la repetición de código. 🌳</p></li>
+<li><p><strong>Mixins:</strong> Los mixins permiten definir bloques de estilos reutilizables que pueden ser incluidos en múltiples selectores, lo que promueve la reutilización de código y la consistencia en el diseño. 🌀</p></li>
+<li><p><strong>Funciones:</strong> SCSS permite definir funciones que pueden realizar cálculos, manipulaciones de cadenas y otras operaciones dentro de los estilos CSS, lo que proporciona mayor flexibilidad y capacidad de abstracción en la definición de estilos. 🛠️</p></li>
+</ul>
+</section>
+<section id="que-es-angular">
+<h3>¿Qué es Angular? 🅰️<a class="headerlink" href="#que-es-angular" title="Link to this heading">#</a></h3>
+<p>Angular es un framework de desarrollo de aplicaciones web de código abierto y basado en TypeScript. Es mantenido por Google y una comunidad activa de desarrolladores. Angular se utiliza para construir aplicaciones web dinámicas y de una sola página (SPA) de manera eficiente y escalable.</p>
+</section>
+<section id="caracteristicas-principales">
+<h3>Características Principales:<a class="headerlink" href="#caracteristicas-principales" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p><strong>Arquitectura MVC:</strong> Angular sigue el patrón de diseño Modelo-Vista-Controlador (MVC), lo que significa que separa la lógica de negocio, la presentación y la interacción del usuario en diferentes componentes.</p></li>
+<li><p><strong>Componentes:</strong> Angular utiliza una estructura de componentes para construir interfaces de usuario reutilizables y modulares. Los componentes encapsulan la lógica y la presentación de una parte específica de la aplicación.</p></li>
+<li><p><strong>Enlace de Datos Bidireccional:</strong> Angular ofrece enlace de datos bidireccional, lo que significa que los cambios en el modelo de datos se reflejan automáticamente en la vista y viceversa, sin necesidad de manipulación manual del DOM.</p></li>
+<li><p><strong>Inyección de Dependencias:</strong> Angular tiene un sistema de inyección de dependencias incorporado que facilita la gestión de dependencias entre los distintos componentes de la aplicación.</p></li>
+<li><p><strong>Rutas y Navegación:</strong> Angular proporciona un enrutador incorporado que permite la navegación entre diferentes vistas y la gestión de la historia del navegador de forma sencilla.</p></li>
+<li><p><strong>Directivas:</strong> Angular permite la creación de directivas personalizadas que extienden el comportamiento del HTML, lo que facilita la manipulación del DOM y la creación de componentes reutilizables.</p></li>
+<li><p><strong>Herramientas Integradas:</strong> Angular cuenta con un conjunto completo de herramientas integradas, como Angular CLI (Interface de Línea de Comandos), que facilita la creación, desarrollo, prueba y despliegue de aplicaciones Angular.</p></li>
+</ol>
+<p>Se explorarán conceptos introductorios de Angular, un framework de desarrollo de aplicaciones web desarrollado por Google.</p>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="markdown.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Markdown Files</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-del-ambiente-node-npm">Instalación del Ambiente (Node npm) 🛠️</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#linux">Linux 🐧</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows 🖥️</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-de-typescript-y-angular">Instalación de typescript y angular 📦</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambientes-de-desarrollo-de-angular-elige-tu-propia-aventura">Ambientes de Desarrollo de Angular: Elige tu Propia Aventura 🚀</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vscode-recomendado-la-eleccion-de-las-personas-cotidianas">1. <strong>VSCode(Recomendado): La Elección de las personas Cotidianas</strong> 💻</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#webstorm-la-eleccion-de-los-amantes-de-intelij-idea">2. <strong>WebStorm: La Elección de los amantes de InteliJ IDEA</strong> 🌊</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#angular-ide-la-eleccion-de-los-sonadores-eclipse">3. <strong>Angular IDE: La Elección de los Soñadores Eclipse</strong> 🌟</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#neovim-para-los-valientes-exploradores-de-la-terminal">4. <strong>Neovim: Para los Valientes Exploradores de la Terminal</strong> ⚔️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bloc-de-notas-para-los-viajeros-sin-conexion-a-internet">5. <strong>Bloc de Notas: Para los Viajeros Sin Conexión a Internet</strong> 📝</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#typescript-scss-y-angular">TypeScript, SCSS y Angular</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#typescript">TypeScript 💻</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scss-sass">SCSS (Sass) 🎨</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#que-es-angular">¿Qué es Angular? 🅰️</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#caracteristicas-principales">Características Principales:</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
