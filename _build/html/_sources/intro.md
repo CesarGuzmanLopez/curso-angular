@@ -67,16 +67,16 @@ npm install -g typescript
 
 ## Ambientes de Desarrollo de Angular: Elige tu Propia Aventura 🚀
 
-Angular, como todo gran viaje, comienza con la elección de tu herramienta de desarrollo.
+Comienza con la elección de tu herramienta de desarrollo para Angular.
 
 ### 1. **VSCode(Recomendado): La Elección de las personas Cotidianas** 💻
 
-Si eres un héroe cotidiano buscando una herramienta confiable y versátil, Visual Studio Code (VSCode) es tu mejor compañero de viaje. Simplemente instálalo y ¡listo para la acción!
+Si eres un héroe cotidiano buscando una herramienta confiable y versátil, Visual Studio Code (VSCode) es tu mejor opecion, Simplemente instálalo, agrega los plugings y ¡listo!
 
 **Pasos de Instalación:**
 
 - Descarga VSCode [aquí](https://code.visualstudio.com/).
-- crea un projecto de angular
+- Crea un projecto de angular
 - instala los plugins recomendados
 - ¡Abre el editor y estarás listo para empezar tu aventura Angular!
 

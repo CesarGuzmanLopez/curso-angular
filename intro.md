@@ -89,7 +89,7 @@ Para aquellos que prefieren adentrarse en las profundidades del código con un c
 - Descarga WebStorm [aquí](https://www.jetbrains.com/webstorm/download/).
 - Sigue las instrucciones de instalación.
 
-### 3. **Angular IDE: La Elección de los Soñadores Eclipse** 🌟
+### 3. **Angular IDE: La Elección de Eclipse** 🌟
 
 Para aquellos que encuentran su paz en la familiaridad de Eclipse, Angular IDE es como una suave brisa que te guiará a través de las complejidades del desarrollo Angular.
 
@@ -107,7 +107,7 @@ Para aquellos que desean emprender una aventura más desafiante, Neovim es como 
 - Instala Neovim en tu sistema. Puedes encontrar instrucciones específicas para tu sistema [aquí](https://github.com/neovim/neovim/wiki/Installing-Neovim).
 - Prepárate para sumergirte en el mundo de Angular con Neovim como tu compañero de batalla.
 
-### 5. **Bloc de Notas: Para los Viajeros Sin Conexión a Internet** 📝
+### 5. **Bloc de Notas: Sin Conexión a Internet** 📝
 
 Para aquellos que se encuentran en tierras desconocidas sin conexión a internet, el humilde Bloc de Notas es tu salvador en este mundo digitalizado.
 
