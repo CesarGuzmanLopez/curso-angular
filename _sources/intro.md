@@ -25,14 +25,14 @@ Primero que nada configurar tu entorno de desarrollo para conocer el mundo de An
 
 ¡Vamos a empezar! Para instalar Angular en Linux, primero necesitamos Node.js y npm. Puedes instalarlos usando tu gestor de paquetes favorito. Por ejemplo, en Debian, Ubuntu y similares:
 
-```
+```BASH
 sudo apt update
 sudo apt install nodejs npm
 ```
 
 o fedora, Centos 8, y similares:
 
-```
+```BASH
 sudo dnf update
 sudo dnf install nodejs -y
 ```
@@ -43,7 +43,7 @@ Para instalar Angular en Windows, también necesitas Node.js y npm. Puedes desca
 
 Después de instalar Node.js, abre una ventana de terminal (powershell) y comprobar su instalacion con
 
-```
+```BASH
 npm --version
 ```
 
@@ -53,14 +53,14 @@ Luego, puedes instalar typescript y Angular CLI (Command Line Interface) globalm
 
 en linux
 
-```
+```BASH
 sudo npm install -g @angular/cli
 sudo npm install -g typescript
 ```
 
 o Windows
 
-```
+```BASH
 npm install -g @angular/cli
 npm install -g typescript
 
