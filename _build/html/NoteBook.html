@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>Typescript &#8212; Curso de Angular</title>
   
   
   
@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'NoteBook';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Notebooks with MyST Markdown" href="markdown-notebooks.html" />
     <link rel="prev" title="Markdown Files" href="markdown.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -149,8 +150,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Angular - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Angular - Home"/>`);</script>
   
   
 </a></div>
@@ -175,8 +176,10 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Typescript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -231,7 +234,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -248,7 +251,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FNoteBook.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular/issues/new?title=Issue%20on%20page%20%2FNoteBook.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -362,7 +365,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Typescript</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -371,9 +374,10 @@ document.write(`
                 <h2> Contents </h2>
             </div>
             <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-typescript-desde-la-terminal">Ejecutar TypeScript desde la Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-en-typescript">Tipos en TypeScript</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -384,18 +388,163 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="typescript">
+<h1>Typescript<a class="headerlink" href="#typescript" title="Link to this heading">#</a></h1>
+<p>TypeScript emerge como respuesta a la complejidad  del desarrollo web con JavaScript. Es el cimiento de numerosos frameworks como angular. Es importante destacar que el código en TypeScript normalemente se compila a JavaScript, permitiendo una compatibilidad universal con navegadores y entornos de ejecución. TypeScript, como todo lenguaje moderno es multiparadigma y adaptable a diversos estilos de programación. 💻✨</p>
+<p><a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html">https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html</a></p>
+<section id="ejecutar-typescript-desde-la-terminal">
+<h2>Ejecutar TypeScript desde la Terminal<a class="headerlink" href="#ejecutar-typescript-desde-la-terminal" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><p><strong>Instalar TypeScript globalmente:</strong> Si aún no tienes TypeScript instalado globalmente, puedes hacerlo ejecutando el siguiente comando en la terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>typescript<span class="w"> </span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Crear un archivo</strong>: crear un archivo <code class="docutils literal notranslate"><span class="pre">programa_1.ts</span></code> con el siguiente programa</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;hola mundo&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Navegar al directorio que contiene el archivo TypeScript</strong>: Abre la terminal y navega al directorio donde se encuentra tu archivo TypeScript (programa_1.ts). Utiliza el compilador de TypeScript (tsc) para compilar el archivo .ts a JavaScript con el siguiente comando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>tsc<span class="w"> </span>tsc<span class="w"> </span>archivo.ts
+</pre></div>
+</div>
+<p>Esto generara un archivo programa_1.js</p>
+</li>
+<li><p><strong>Ejecutar el programa</strong> para ejecutar solo tienes que escribir</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>node<span class="w"> </span>programa_1.js
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="tipos-en-typescript">
+<h2>Tipos en TypeScript<a class="headerlink" href="#tipos-en-typescript" title="Link to this heading">#</a></h2>
+<p>¡Por supuesto! Entender los tipos de datos en TypeScript es fundamental, como su nombre lo sugiere, esto es  <strong>mucho muy importante 😊</strong>.
+Los tipos en TypeScript se pueden definir como constantes (const) y variables (let) de la siguiente manera:</p>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;funciona&quot;</span><span class="p">)</span>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">//programa_1.ts</span>
+<span class="c1">// Imprimir en consola</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Hola mundo&quot;</span><span class="p">);</span>
+
+<span class="c1">// Tipos básicos</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">numero</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">texto</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hola&quot;</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">booleano</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+
+<span class="c1">// Imprimir tipos básicos</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Numero: </span><span class="si">${</span><span class="nx">numero</span><span class="si">}</span><span class="sb">, Texto: </span><span class="si">${</span><span class="nx">texto</span><span class="si">}</span><span class="sb">, Booleano: </span><span class="si">${</span><span class="nx">booleano</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="c1">// Tipos compuestos</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">arreglo</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">tupla</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="kt">number</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Hola&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">];</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">objeto</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">30</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// Imprimir tipos compuestos</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Arreglo: </span><span class="si">${</span><span class="nx">arreglo</span><span class="si">}</span><span class="sb">, Tupla: </span><span class="si">${</span><span class="nx">tupla</span><span class="si">}</span><span class="sb">, Objeto: </span><span class="si">${</span><span class="nx">objeto</span><span class="si">}</span><span class="sb">\n`</span><span class="p">);</span>
+
+<span class="c1">// Tipos no tipos: null  any</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">nulo</span><span class="o">:</span><span class="w"> </span><span class="kt">null</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">cualquiera</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hola&quot;</span><span class="p">;</span>
+
+<span class="c1">//el tipo que yo yamo el verdadero tipo de undefined es similar void</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">indefinido</span><span class="o">:</span><span class="w"> </span><span class="kt">undefined</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">undefined</span><span class="p">;</span>
+
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Nulo: </span><span class="si">${</span><span class="nx">nulo</span><span class="si">}</span><span class="sb">, Indefinido: </span><span class="si">${</span><span class="nx">indefinido</span><span class="si">}</span><span class="sb">, Cualquiera: </span><span class="si">${</span><span class="nx">cualquiera</span><span class="si">}</span><span class="sb">\n`</span><span class="p">);</span>
+
+<span class="c1">// Declaración de variable sin tipo</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">sinTipo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hola&quot;</span><span class="p">;</span>
+
+<span class="c1">// Imprimir variable sin tipo</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Sin tipo: </span><span class="si">${</span><span class="nx">sinTipo</span><span class="si">}</span><span class="sb">\n`</span><span class="p">);</span>
+
+<span class="c1">// Constantes</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">constante</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hola&quot;</span><span class="p">;</span>
+
+<span class="c1">// Imprimir constante</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Constante: </span><span class="si">${</span><span class="nx">constante</span><span class="si">}</span><span class="sb">\n`</span><span class="p">);</span>
+
+<span class="c1">// Cambio de valor de variable</span>
+<span class="c1">// sinTipo = &quot;Adios&quot;; //error </span>
+
+
+<span class="c1">// Clases de los primitivos</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de numero: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">numero</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de texto: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">texto</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de booleano: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">booleano</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de arreglo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">arreglo</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de tupla: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">tupla</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de objeto: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">objeto</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de nulo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">nulo</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de indefinido: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">indefinido</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de cualquiera: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">cualquiera</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de sinTipo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">sinTipo</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de constante: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">constante</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+
+<span class="c1">//tambien se puede concatenar la salidas de los console.log</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Tipo de numero: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">numero</span><span class="si">}</span><span class="sb">, Tipo de texto: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">texto</span><span class="si">}</span><span class="sb">, Tipo de booleano: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">booleano</span><span class="si">}</span><span class="sb">, Tipo de arreglo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">arreglo</span><span class="si">}</span><span class="sb">, Tipo de tupla: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">tupla</span><span class="si">}</span><span class="sb">, Tipo de objeto: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">objeto</span><span class="si">}</span><span class="sb">, Tipo de nulo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">nulo</span><span class="si">}</span><span class="sb">, Tipo de indefinido: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">indefinido</span><span class="si">}</span><span class="sb">, Tipo de cualquiera: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">cualquiera</span><span class="si">}</span><span class="sb">, Tipo de sinTipo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">sinTipo</span><span class="si">}</span><span class="sb">, Tipo de constante: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">constante</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="c1">//con el operador + tambien se puede concatenar</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tipo de numero: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de texto: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">texto</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de booleano: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">booleano</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de arreglo: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">arreglo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de tupla: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">tupla</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de objeto: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">objeto</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de nulo: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">nulo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de indefinido: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">indefinido</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de cualquiera: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">cualquiera</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de sinTipo: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">sinTipo</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;,\n Tipo de constante: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="ow">typeof</span><span class="w"> </span><span class="nx">constante</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>funciona
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola mundo
+Numero: 10, Texto: Hola, Booleano: true
+Arreglo: 1,2,3, Tupla: Hola,10, Objeto: [object Object]
+
+Nulo: null, Indefinido: undefined, Cualquiera: Hola
+
+Sin tipo: Hola
+
+Constante: Hola
+
+Tipo de numero: number
+Tipo de texto: string
+Tipo de booleano: boolean
+Tipo de arreglo: object
+Tipo de tupla: object
+Tipo de objeto: object
+Tipo de nulo: object
+Tipo de indefinido: undefined
+Tipo de cualquiera: string
+Tipo de sinTipo: string
+Tipo de constante: string
+Tipo de numero: number, Tipo de texto: string, Tipo de booleano: boolean, Tipo de arreglo: object, Tipo de tupla: object, Tipo de objeto: object, Tipo de nulo: object, Tipo de indefinido: undefined, Tipo de cualquiera: string, Tipo de sinTipo: string, Tipo de constante: string
+Tipo de numero: number,
+ Tipo de texto: string,
+ Tipo de booleano: boolean,
+ Tipo de arreglo: object,
+ Tipo de tupla: object,
+ Tipo de objeto: object,
+ Tipo de nulo: object,
+ Tipo de indefinido: undefined,
+ Tipo de cualquiera: string,
+ Tipo de sinTipo: string,
+ Tipo de constante: string
 </pre></div>
 </div>
 </div>
 </div>
+<ol class="arabic simple">
+<li><p><strong>Imprimir en consola:</strong> Se utiliza <code class="docutils literal notranslate"><span class="pre">console.log()</span></code> para mostrar “Hola mundo” en la consola.</p></li>
+<li><p><strong>Tipos básicos:</strong> Se declaran variables con tipos básicos (<code class="docutils literal notranslate"><span class="pre">number</span></code>, <code class="docutils literal notranslate"><span class="pre">string</span></code>, <code class="docutils literal notranslate"><span class="pre">boolean</span></code>).</p></li>
+<li><p><strong>Tipos compuestos:</strong> Se declaran variables con tipos compuestos (<code class="docutils literal notranslate"><span class="pre">number[]</span></code>, <code class="docutils literal notranslate"><span class="pre">[string,</span> <span class="pre">number]</span></code>, <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">nombre:</span> <span class="pre">string,</span> <span class="pre">edad:</span> <span class="pre">number</span> <span class="pre">}</span></code>).</p></li>
+<li><p><strong>Objetos</strong> Se declaran variables con tipos especiales (<code class="docutils literal notranslate"><span class="pre">null</span></code>, <code class="docutils literal notranslate"><span class="pre">any</span></code>) y se imprimen.</p></li>
+<li><p><strong>Variable sin tipo:</strong> Se declara una variable sin especificar su tipo, se infiere como <code class="docutils literal notranslate"><span class="pre">string</span></code> y se imprime.</p></li>
+<li><p><strong>Constantes:</strong> Se declara una constante y se intenta modificar (comentado) para mostrar que las constantes no pueden ser reasignadas.</p></li>
+<li><p><strong>Clases de los primitivos:</strong> Se usa <code class="docutils literal notranslate"><span class="pre">typeof</span></code> para obtener el tipo de las variables y se imprimen.</p></li>
+<li><p><strong>El tipo undefined:</strong> como podemos ver el typo undefined no esta definido</p></li>
+</ol>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p><strong><code class="docutils literal notranslate"><span class="pre">var</span></code> deprecated</strong>
+Usualmente encontrarás <code class="docutils literal notranslate"><span class="pre">var</span></code> en muchos tutoriales; sin embargo, está en desuso y se debe reemplazar por <code class="docutils literal notranslate"><span class="pre">let</span></code> o <code class="docutils literal notranslate"><span class="pre">const</span></code>.</p>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -406,16 +555,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "jslab"
+            mode: "tslab"
         },
         kernelOptions: {
-            name: "jslab",
+            name: "tslab",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'jslab'</script>
+    <script>kernelName = 'tslab'</script>
 
                 </article>
               
@@ -436,6 +585,15 @@ document.write(`
         <p class="prev-next-title">Markdown Files</p>
       </div>
     </a>
+    <a class="right-next"
+       href="markdown-notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks with MyST Markdown</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -451,9 +609,10 @@ document.write(`
     <i class="fa-solid fa-list"></i> Contents
   </div>
   <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ejecutar-typescript-desde-la-terminal">Ejecutar TypeScript desde la Terminal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-en-typescript">Tipos en TypeScript</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
@@ -467,7 +626,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Cesar Gerardo Guzman Lopez
 </p>
 
   </div>
