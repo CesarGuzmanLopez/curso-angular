@@ -3,7 +3,11 @@
 
 format: jb-book
 root: intro
-chapters:
-  - file: TypeScript
-   - file: Tipos-de-datos
-    - file: Tipos-de-datos-avanzados
+
+parts:
+  - caption: TypeScript
+    chapters:
+      - file: TypeScript
+        sections:
+          - file: tipos-de-datos
+          - file: tipos-de-datos-avanzados
