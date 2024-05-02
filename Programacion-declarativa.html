@@ -148,8 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Angular - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Angular - Home"/>`);</script>
   
-    <p class="title logo__title">Curso de Angular</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -369,9 +375,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-programacion-declarativa"><strong>Introducción a la Programación Declarativa</strong> 🌟</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-orden-superior"><strong>Funciones de Orden Superior</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-objetos-con-librerias-externas"><strong>Manipulación de Objetos con Librerías Externas</strong> 📚</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-orden-superior"><strong>Funciones de Orden Superior</strong>   🚀</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-de-funciones"><strong>Composición de Funciones</strong> 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad-y-estructuras-persistentes"><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-de-control-declarativo"><strong>Flujo de Control Declarativo</strong> 🎭</a></li>
@@ -388,47 +392,209 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="programacion-declarativa">
 <h1>Programacion declarativa<a class="headerlink" href="#programacion-declarativa" title="Permalink to this heading">#</a></h1>
-<section id="introduccion-a-la-programacion-declarativa">
-<h2><strong>Introducción a la Programación Declarativa</strong> 🌟<a class="headerlink" href="#introduccion-a-la-programacion-declarativa" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Conceptos fundamentales de la programación declarativa.</p></li>
-<li><p>Enfoque en describir qué hacer en lugar de cómo hacerlo.</p></li>
-</ul>
-</section>
+<p>TypeScript, al ser un lenguaje multi-paradigma, permite la programación declarativa, una forma de escribir código que se centra en “qué hacer” en lugar de “cómo hacerlo”. Esto resulta en un código más conciso, legible y fácil de mantener. Veamos algunos aspectos clave de la programación declarativa en TypeScript:</p>
 <section id="funciones-de-orden-superior">
-<h2><strong>Funciones de Orden Superior</strong><a class="headerlink" href="#funciones-de-orden-superior" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Uso de funciones <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> y <code class="docutils literal notranslate"><span class="pre">reduce</span></code> en arreglos.</p></li>
-<li><p>Permiten realizar transformaciones y filtrado de datos de manera declarativa.</p></li>
-</ul>
-</section>
-<section id="manipulacion-de-objetos-con-librerias-externas">
-<h2><strong>Manipulación de Objetos con Librerías Externas</strong> 📚<a class="headerlink" href="#manipulacion-de-objetos-con-librerias-externas" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Utilización de librerías como Lodash para manipular objetos de forma declarativa.</p></li>
-<li><p>Ejemplos de uso de funciones como <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code> y <code class="docutils literal notranslate"><span class="pre">groupBy</span></code> en objetos.</p></li>
-</ul>
+<h2><strong>Funciones de Orden Superior</strong>   🚀<a class="headerlink" href="#funciones-de-orden-superior" title="Permalink to this heading">#</a></h2>
+<p>tenemos el uso de funciones <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">reduce</span></code>, <code class="docutils literal notranslate"><span class="pre">foreach</span></code>  y muchos mas en arreglos. aqui un lugar de <a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/functions.html">consultar</a> sin embargo todas de estas se utilizan con funciones anonimas y flecha(lamda)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Arreglo de números</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">numeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+
+<span class="c1">// Usando la función map para duplicar cada número</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">numerosDuplicados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">numero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Números duplicados:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">numerosDuplicados</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: [2, 4, 6, 8, 10]</span>
+
+<span class="c1">// Usando la función filter para filtrar números pares</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">numerosPares</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">filter</span><span class="p">(</span><span class="nx">numero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Números pares:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">numerosPares</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: [2, 4]</span>
+
+<span class="c1">// Usando la función reduce para sumar todos los números</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sumaTotal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">numeros</span><span class="p">.</span><span class="nx">reduce</span><span class="p">((</span><span class="nx">acumulador</span><span class="p">,</span><span class="w"> </span><span class="nx">numero</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">acumulador</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">numero</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Suma total:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">sumaTotal</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 15</span>
+
+<span class="c1">// Usando la función forEach para mostrar cada número multiplicado por 2</span>
+<span class="nx">numeros</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">numero</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Número multiplicado por 2:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">numero</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">));</span>
+
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">nombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;María&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Carlos&quot;</span><span class="p">];</span>
+
+<span class="c1">// Encuentra el primer nombre que empieza con &quot;A&quot;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">primerNombreConA</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombres</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">nombre</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nombre</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Primer nombre que empieza con &#39;A&#39;:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">primerNombreConA</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Ana</span>
+
+<span class="c1">// Verifica si al menos un nombre tiene más de 4 letras</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">algunNombreLargo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombres</span><span class="p">.</span><span class="nx">some</span><span class="p">(</span><span class="nx">nombre</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nombre</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;¿Algun nombre es largo?:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">algunNombreLargo</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: true</span>
+
+<span class="c1">// Verifica si todos los nombres tienen más de 2 letras</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">todosNombresLargos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombres</span><span class="p">.</span><span class="nx">every</span><span class="p">(</span><span class="nx">nombre</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nombre</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;¿Todos los nombres son largos?:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">todosNombresLargos</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: true</span>
+
+<span class="c1">// Ordena los nombres alfabéticamente</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">nombresOrdenados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombres</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nombres ordenados alfabéticamente:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nombresOrdenados</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// Transforma cada nombre en un arreglo de caracteres y aplana el resultado</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">caracteresNombres</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombres</span><span class="p">.</span><span class="nx">flatMap</span><span class="p">(</span><span class="nx">nombre</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">nombre</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">));</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Caracteres de los nombres:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">caracteresNombres</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// Retorna una porción del arreglo original</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">nombresSeleccionados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombres</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Desde el índice 1 hasta el 4 (no inclusive)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nombres seleccionados:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nombresSeleccionados</span><span class="p">);</span><span class="w"> </span>
+
+<span class="c1">// Cambia el contenido del arreglo original eliminando el primer elemento y agregando uno nuevo</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">nombresModificados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombres</span><span class="p">.</span><span class="nx">splice</span><span class="p">(</span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Luis&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Elimina el primer elemento y lo reemplaza por &quot;Luis&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Nombres modificados:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">nombresModificados</span><span class="p">);</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Números duplicados: [ <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">4</span>, <span class=" -Color -Color-Yellow">6</span>, <span class=" -Color -Color-Yellow">8</span>, <span class=" -Color -Color-Yellow">10</span> ]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Números pares: [ <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">4</span> ]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Suma total: <span class=" -Color -Color-Yellow">15</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">2</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">4</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">6</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">8</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">10</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Primer nombre que empieza con &#39;A&#39;: Ana
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿Algun nombre es largo?: <span class=" -Color -Color-Yellow">true</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿Todos los nombres son largos?: <span class=" -Color -Color-Yellow">true</span>
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombres ordenados alfabéticamente: [ <span class=" -Color -Color-Green">&#39;Ana&#39;</span>, <span class=" -Color -Color-Green">&#39;Carlos&#39;</span>, <span class=" -Color -Color-Green">&#39;Juan&#39;</span>, <span class=" -Color -Color-Green">&#39;María&#39;</span>, <span class=" -Color -Color-Green">&#39;Pedro&#39;</span> ]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Caracteres de los nombres: [
+  <span class=" -Color -Color-Green">&#39;A&#39;</span>, <span class=" -Color -Color-Green">&#39;n&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>, <span class=" -Color -Color-Green">&#39;C&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>,
+  <span class=" -Color -Color-Green">&#39;r&#39;</span>, <span class=" -Color -Color-Green">&#39;l&#39;</span>, <span class=" -Color -Color-Green">&#39;o&#39;</span>, <span class=" -Color -Color-Green">&#39;s&#39;</span>, <span class=" -Color -Color-Green">&#39;J&#39;</span>,
+  <span class=" -Color -Color-Green">&#39;u&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>, <span class=" -Color -Color-Green">&#39;n&#39;</span>, <span class=" -Color -Color-Green">&#39;M&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>,
+  <span class=" -Color -Color-Green">&#39;r&#39;</span>, <span class=" -Color -Color-Green">&#39;í&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>, <span class=" -Color -Color-Green">&#39;P&#39;</span>, <span class=" -Color -Color-Green">&#39;e&#39;</span>,
+  <span class=" -Color -Color-Green">&#39;d&#39;</span>, <span class=" -Color -Color-Green">&#39;r&#39;</span>, <span class=" -Color -Color-Green">&#39;o&#39;</span>
+]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombres seleccionados: [ <span class=" -Color -Color-Green">&#39;Carlos&#39;</span>, <span class=" -Color -Color-Green">&#39;Juan&#39;</span>, <span class=" -Color -Color-Green">&#39;María&#39;</span> ]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombres modificados: [ <span class=" -Color -Color-Green">&#39;Ana&#39;</span> ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Hay una cantidad gigante de funciones de orden superior en typescript y pueden ser usadas de duferentes formas
+se recomienda leer mas al respecto en la documentacion oficial</p>
+</div>
 </section>
 <section id="composicion-de-funciones">
 <h2><strong>Composición de Funciones</strong> 🔄<a class="headerlink" href="#composicion-de-funciones" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Aplicación de múltiples transformaciones a un valor de manera concisa.</p></li>
-<li><p>Creación de funciones compuestas para realizar operaciones complejas.</p></li>
-</ul>
+<p>La composición de funciones es un concepto fundamental en programación funcional que consiste en combinar dos o más funciones para crear una nueva función. Esta nueva función ejecuta las funciones originales en secuencia, pasando el resultado de una función como entrada a la siguiente. Esto permite crear cadenas de transformaciones de datos de manera modular y reutilizable.</p>
+<p>Por ejemplo, si tenemos dos funciones f y g, la composición de estas funciones se representa como f(g(x)), lo que significa que primero se aplica la función g al argumento x, y luego se aplica la función f al resultado de g(x).</p>
+<p>Aquí tienes un ejemplo en TypeScript que muestra cómo componer dos funciones:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Definición de funciones</span>
+<span class="kd">const</span><span class="w"> </span><span class="kr">double</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">x</span><span class="p">;</span>
+
+<span class="c1">// Función de composición</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">compose</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">U</span><span class="p">,</span><span class="w"> </span><span class="nx">V</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">f</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">U</span><span class="p">,</span><span class="w"> </span><span class="nx">g</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">U</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">V</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">V</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">g</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="c1">// Composición de las funciones double y square</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">doubleThenSquare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">compose</span><span class="p">(</span><span class="kr">double</span><span class="p">,</span><span class="w"> </span><span class="nx">square</span><span class="p">);</span>
+
+<span class="c1">// Ejemplo de uso de la función compuesta</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubleThenSquare</span><span class="p">(</span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 36 (double(3) = 6, square(6) = 36)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">36</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Ya que es un concepto importante pero un poco enredado se recomienda usar librerias que te permiten usar programacion funcional mas agilmente y facil como Ramda y Lodash/fp esta ultima que es implementada nativamente en angular</p>
+</div>
 </section>
 <section id="inmutabilidad-y-estructuras-persistentes">
 <h2><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒<a class="headerlink" href="#inmutabilidad-y-estructuras-persistentes" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Enfoque en mantener los datos inmutables para evitar efectos secundarios.</p></li>
-<li><p>Uso de estructuras de datos persistentes para garantizar la inmutabilidad.</p></li>
-</ul>
+<p>La inmutabilidad y las estructuras persistentes son conceptos fundamentales en la programación funcional que se centran en garantizar que los datos no cambien después de su creación. Esto significa que una vez que se crea un dato, no se puede modificar, lo que evita efectos secundarios no deseados y facilita el razonamiento sobre el código.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">List</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;immutable&#39;</span><span class="p">;</span><span class="c1">//npm install immutable</span>
+
+<span class="c1">// Crear una lista inmutable</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">originalList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">List</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">]);</span>
+
+<span class="c1">// Agregar un elemento a la lista original (inmutabilidad)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">modifiedList</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">originalList</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="mf">6</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">originalList</span><span class="p">.</span><span class="nx">toArray</span><span class="p">());</span><span class="w"> </span><span class="c1">// Output: [1, 2, 3, 4, 5]</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">modifiedList</span><span class="p">.</span><span class="nx">toArray</span><span class="p">());</span><span class="w"> </span><span class="c1">// Output: [1, 2, 3, 4, 5, 6]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ <span class=" -Color -Color-Yellow">1</span>, <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">3</span>, <span class=" -Color -Color-Yellow">4</span>, <span class=" -Color -Color-Yellow">5</span> ]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ <span class=" -Color -Color-Yellow">1</span>, <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">3</span>, <span class=" -Color -Color-Yellow">4</span>, <span class=" -Color -Color-Yellow">5</span>, <span class=" -Color -Color-Yellow">6</span> ]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Para este caso en especifico tuve que salirme del standar de TypeScript, ya que la inmutabilidad todavia es un debate activo en  typescript y este da ejemplos de inmutabilidad con el standar en su documentacion <a class="reference external" href="https://www.typescriptlang.org/play/?ssl=35&amp;ssc=43&amp;pln=35&amp;pc=49#code/PTAECkEMDdIZQMYCcCWAHALqFBnUlQAbSAOwHMBXSMgU1AHcUMALfUAMxvocgE88MAe1AATGgmJI6LSBgBQIUDkEBbOoPahegiklCCARgCtxGPCMEkA5FgTNStAHSgAKszorBOLGiSqUJDQkWLgKYAiW3qAAtAzMKHZKfAL2WCx0sIQUdPSWNqB2DjSOcnIRJFHuhISCAOqCSIQioAC8oABEABI01cL1jSLtANyligCaOgWkJIK29uR0VTX9TaAz9AA0rrxoNIiomAwo1aBkKNA0YVqTpKA0SH56kAY6afE4WwbikBQ4dNoUBg6Va0LCWOiyK5ICjBFBqbAVDA0SAiEpyJZ1BqrNpdFBAgbDUZgWrMXhTKT4F4UEIqFTU57HJi8AD8oAAgkRZvpNCxcNg8M9XlCaCIKAgAmQCqo0IQaAAPJkI666KViZwASU0AKmJFAUlFCGk7iuJAoKi+eg0oF55Dw9HiiQQt0KCy26V16QpkApspwOCuNrIAmEAGsaDQ0NakJAECHuWjFABVHASqWI-lsMhSWQcFBIKLeCNbZiCeg0C56Xl4diQY7+xQWei6ggGJhxIKgX6pwwmBBmNHlKIqXgAYUiGFIGAA8sZTK1QABvOSgUAqHBkABcHW6vVAK0GGzkAF8Rldh2PEZOZ72QngZlgAI4UJgQtPeSfWksUMjMT7fX6XIoZY6koGDHIQq6QGGBTzLQwagGg3pmNyn7qLOfZbOwDRXPKkAqDKOR0E6uourQq7rhupTnuOV7oRgjhrpKOKdHi+6Elcg5YGopApBkkBZBCbw5mgggBFg778KhSRqJ81IBqkUk9nOTB-IQmgqHwMFFAiSJICQ-GELwzhuHyxFXF8WkLM0XbkKA16mI47BSDQABexSlJxq68AAIjQ7ABC+hkXu+wT2X285hfRTnhm5AAUS4roxW5dD0NR7liB7HgAlKeigkh2txKeFfJOYIbkkG67i6tqxH3pZZHpFcYn3PphA4MZOx7Mg6BYIwJwaJwej3I8eABKhfxTH8OCUXIw6+f5JCBaONGhXRDHrvOuLpQSuVgCZdoNCGvHSXQWFPA8yTWoIggzZ5w4AGJ+OVbIXWSbSRY5zlxQA2ri7QALo5bNvCPWVQQvdGRloL8zCxe0bFA1cyaptFrkeMiFTKiBGDQlEMhvGhN78lcEmpukJ2diQYiVu4oAloIqJEtsuz7D1dOQAKHBcHcco4wQOC8MEkBynT11HVd2D4X4Fz4iGEpXIwLCS3SE4GLKoiyAQ9oJKwNW3AtzRjeTLidazmAk6YKCWCh5O4fhvqUSAOFynhBEboQL7Rm1zuu7KG4YJ10SMGIi3kNEpAiNE+kPKW8tAA">aqui el ejemplo</a> que da
+y tambien para <a class="reference external" href="https://www.typescriptlang.org/play/?#code/PTAEBUE8AcFMGUDGAnAltALqAFgQwM6j4D2AtrKAGYCuAdkXIqrgDaiIGyGXHKguoMsZK0KpaAKBBFi1ZIgqJiAE1gA6CVLABJetFzIMAGlC5+xLMUqgM2CvmrRovLKkJKAbsNjLQ4mzAUAO6oqrTiAOZaprS+tAbIxCG0EaAAFKCwAB64pNAssABcGIEAtCFhkaW4saXxyInJqQCUMb6CAOT40UEu2OzEXmgpNnhYlKjI+Bga0QCC-ILCrH6EZqS8isS0KLBCRNQARiVwoFamAywFiBioXgFwGtIA6mOjbqDkNWKEtrhYACIABKwK7EUDPXgsZQA1YXabDCImQ7ULC4aIIyJw2gWUDA0EscGQ5DQ2HifChCi2KmBIiQaawUizJS0aY4AnEYnQ0AAXjxILBEKhMIA3BIClhsKgub4+cDUEKSaLQNJbB8PmZMSNDrAONR8BRBHCJZppOApdw6DdUNsbLgANZcUxXIgYRHdVSIFgGCg0Ha3W2sQlBfBzWiQeBuyJpAwRQquxHNMVBpKh8ORxFpOxgmVJiQpkNhiNRlJZ6XCvPRc0fP3W23bFiQUyIBSYX52BNYgRCERsfGCmUAiSe73IX1WgP0Av4ADytEbAsJMeQcf5HMVpLz07nC45WY5ueTYJDO8gi+IZcPprA1cIEsIkFkoBHPtAcwACtpCEEpYh+vqKDoG1WRscF8FwJtBGiBsm1wFtYDbC59EMVBEGoUdFh7VhCk0F8xyoCdgOdYN8AAMUmaZyK8AA5ahSB1KZl1XABGUAAB9QAAJnY0AAGYeIAFh4gBWLdjzIiiMCo2BaPo4R8DSZixJI8ipiku4ZLohiFOYgAGSsJVAZwhFoW4g0gItZIY3k+KPFTJOkqz5LSYzYFM5grgs8MnOQStpDmcZJNACJvR2WATDVQhkHQw18FoDo0ScAQfFAgY8gKLIzkOAArXUMHwZltjZUhIAAVQNPg+QAbwkUBQHich4wBeBcEOYZcABIwJAAXzFaJ4FgChsCSPwsDdb4eGQUhCAAAwaoo8RatrxA6mbUrm3IFq1CIZuiWAvHoWxZAifojQ+VQJloFKCAuFlphqGYIAtOEdT1A1omperNvYGpXVQF0-xqCIKBqJtbkazQSvK4Q1HmmyAQAYUgUypQ6vrpAAIV1XAAM+MqKq6L7yCMxI4EMJsOHoQGUnCiBAiQNBMGiSmcSwXHPu7ZY2CGClbX8T6TnsekhCZJ7vGiDUqFgf45GCX9+hCF0C1AR9qFS5RwUinAkn2mHNDurAoZ2PAUkiaHKtAGq6vmprSP+UgOq67rTHcIqMHRsBXjcvEboNsk1iS1AUowTWO2IHK8oiux6CNV6yC4aIzHD3KbkwrnQB-VD+g1rh4qwangb8VkhFwXxznRaRSFRVqCiylOsEzv8ftoWYjYLs2Kth765QAJVwAA7-BwIBD2fdd4v-YuCIx3+UDiDYSaqFQLIMFl3xlH+XATBqXx8jghPpB-bwVafN1pfzlQQbvJZezEedxHUMeBgn50SB6Xh7W-QR+gSCD8BwiQBtMg5HSrAc2hA+QAG0qpEwWgCDGaAaiwm6iYGBNs8R22wIkYgABHZBABdF2z9phiiAA">literales</a> pero son mas complejos que la libreria <code class="docutils literal notranslate"><span class="pre">inmutable</span></code> la cual pareciera se convertira parte del standar</p>
+</div>
 </section>
 <section id="flujo-de-control-declarativo">
 <h2><strong>Flujo de Control Declarativo</strong> 🎭<a class="headerlink" href="#flujo-de-control-declarativo" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Uso de condicionales ternarios para controlar el flujo del programa de manera declarativa.</p></li>
-<li><p>Expresiones condicionales concisas y legibles.</p></li>
-</ul>
+<p>Uso de condicionales ternarios para controlar el flujo del programa de manera declarativa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">20</span><span class="p">;</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">message</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">age</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">18</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;Eres mayor de edad&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Eres menor de edad&#39;</span><span class="p">;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &#39;Eres mayor de edad&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eres mayor de edad
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -495,9 +661,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-programacion-declarativa"><strong>Introducción a la Programación Declarativa</strong> 🌟</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-orden-superior"><strong>Funciones de Orden Superior</strong></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-objetos-con-librerias-externas"><strong>Manipulación de Objetos con Librerías Externas</strong> 📚</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-orden-superior"><strong>Funciones de Orden Superior</strong>   🚀</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-de-funciones"><strong>Composición de Funciones</strong> 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad-y-estructuras-persistentes"><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-de-control-declarativo"><strong>Flujo de Control Declarativo</strong> 🎭</a></li>

@@ -148,8 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Angular - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Angular - Home"/>`);</script>
   
-    <p class="title logo__title">Curso de Angular</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -376,11 +382,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloques-estaticos-en-clases">Bloques estáticos en Clases 🧱</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-genericas">Clases Genéricas 🧬</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-en-tiempo-de-ejecucion-en-clases"><code class="docutils literal notranslate"><span class="pre">this</span></code> en Tiempo de Ejecución en Clases 🕒</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-parametros">Propiedades de Parámetros 🎯</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-de-clase">Expresiones de Clase 💡</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmas-de-constructor">Firmas de Constructor 🏷️</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-abstractas-y-miembros">Clases Abstractas y Miembros 🌌</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaciones-entre-clases">Relaciones Entre Clases 🤝</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoradores">Decoradores 📣🎧</a></li>
 </ul>
             </nav>
         </div>
@@ -398,50 +401,517 @@ document.write(`
 <section id="miembros-de-clase">
 <h2>Miembros de Clase 🏗️<a class="headerlink" href="#miembros-de-clase" title="Permalink to this heading">#</a></h2>
 <p>Los miembros de clase, que incluyen campos, métodos, getters/setters y firmas de índice, son fundamentales para definir el comportamiento y las propiedades de una clase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Definición de una clase que utiliza varios tipos de miembros</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Campo de clase</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Constructor</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombre</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Método de instancia</span>
+<span class="w">    </span><span class="nx">saludar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`¡Hola, soy </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Getter</span>
+<span class="w">    </span><span class="nx">get</span><span class="w"> </span><span class="nx">NombreCompleto</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="sb">`Mi nombre completo es </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="c1">// Setter</span>
+<span class="w">    </span><span class="nx">set</span><span class="w"> </span><span class="nx">NombreCompleto</span><span class="p">(</span><span class="nx">nuevoNombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nuevoNombre</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span>
+
+<span class="p">}</span>
+
+<span class="c1">// Crear una instancia de la clase Persona</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">persona1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Persona</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">);</span>
+
+<span class="c1">// Acceder al campo de clase</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona1</span><span class="p">.</span><span class="nx">nombre</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Juan</span>
+
+<span class="c1">// Llamar al método de instancia</span>
+<span class="nx">persona1</span><span class="p">.</span><span class="nx">saludar</span><span class="p">();</span><span class="w"> </span><span class="c1">// Output: ¡Hola, soy Juan!</span>
+
+<span class="c1">// Usar el getter</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona1</span><span class="p">.</span><span class="nx">NombreCompleto</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Mi nombre completo es Juan</span>
+
+<span class="c1">// Usar el setter</span>
+<span class="nx">persona1</span><span class="p">.</span><span class="nx">NombreCompleto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Pedro&quot;</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona1</span><span class="p">.</span><span class="nx">NombreCompleto</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Mi nombre completo es Pedro</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Juan
+¡Hola, soy Juan!
+Mi nombre completo es Juan
+Mi nombre completo es Pedro
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Los getters y setters son esenciales en frameworks como Angular. Actúan como variables pero permiten una gestión más segura y reactiva de los datos y asignerles afectos secundarios. En Angular, son útiles para manipular datos en componentes y servicios. Los getters obtienen valores de propiedades de forma segura, mientras que los setters actualizan esos valores de manera controlada, manteniendo la coherencia de los datos y evitando efectos secundarios no deseados.</p>
+</div>
 </section>
 <section id="herencia-de-clases">
 <h2>Herencia de Clases 🏰<a class="headerlink" href="#herencia-de-clases" title="Permalink to this heading">#</a></h2>
 <p>La herencia de clases nos permite crear nuevas clases basadas en clases existentes, compartiendo así comportamientos y propiedades.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Definición de la clase base</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="k">public</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">    </span><span class="nx">moverse</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb"> se está moviendo.`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Definición de una subclase que hereda de la clase base</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Perro</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="nx">raza</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">(</span><span class="nx">nombre</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">ladrar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb"> está ladrando.`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Creación de una instancia de la subclase</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">miPerro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Perro</span><span class="p">(</span><span class="s2">&quot;Koby&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Labrador&quot;</span><span class="p">);</span>
+
+<span class="c1">// Acceso a métodos de la clase base y subclase</span>
+<span class="nx">miPerro</span><span class="p">.</span><span class="nx">moverse</span><span class="p">();</span><span class="w"> </span><span class="c1">// Output: Max se está moviendo.</span>
+<span class="nx">miPerro</span><span class="p">.</span><span class="nx">ladrar</span><span class="p">();</span><span class="w"> </span><span class="c1">// Output: Max está ladrando.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Koby se está moviendo.
+Koby está ladrando.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="visibilidad-de-miembros">
 <h2>Visibilidad de Miembros 🔍<a class="headerlink" href="#visibilidad-de-miembros" title="Permalink to this heading">#</a></h2>
 <p>La visibilidad de miembros, como <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">protected</span></code> y <code class="docutils literal notranslate"><span class="pre">private</span></code>, controla el acceso a los miembros de una clase desde fuera de la misma.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Miembro público</span>
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Miembro protegido</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">telefono</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Miembro privado</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">telefono</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">edad</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">telefono</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">telefono</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">mostrarNombre</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Nombre: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">protected</span><span class="w"> </span><span class="nx">mostrarEdad</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Edad: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">mostrarTelefono</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Teléfono: </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">telefono</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Estudiante</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">telefono</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">super</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="p">,</span><span class="w"> </span><span class="nx">telefono</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="nx">mostrarDetalles</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Podemos acceder a los miembros protegidos de la clase base</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">mostrarNombre</span><span class="p">();</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">mostrarEdad</span><span class="p">();</span>
+<span class="w">        </span><span class="c1">// Pero no podemos acceder a los miembros privados de la clase base</span>
+<span class="w">        </span><span class="c1">// this.mostrarTelefono(); // Esto generaría un error</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Crear una instancia de la clase Persona</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Persona</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;123456789&quot;</span><span class="p">);</span>
+
+<span class="c1">// Acceder a miembros públicos</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">persona</span><span class="p">.</span><span class="nx">nombre</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Juan</span>
+<span class="nx">persona</span><span class="p">.</span><span class="nx">mostrarNombre</span><span class="p">();</span><span class="w"> </span><span class="c1">// Output: Nombre: Juan</span>
+
+<span class="c1">// Acceder a miembros protegidos</span>
+<span class="c1">// console.log(persona.edad); // Esto generaría un error, ya que &#39;edad&#39; es protegido</span>
+<span class="c1">// persona.mostrarEdad(); // Esto también generaría un error</span>
+
+<span class="c1">// Acceder a miembros privados</span>
+<span class="c1">// console.log(persona.telefono); // Esto generaría un error, ya que &#39;telefono&#39; es privado</span>
+<span class="c1">// persona.mostrarTelefono(); // Esto también generaría un error</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Juan
+Nombre: Juan
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="miembros-estaticos">
 <h2>Miembros Estáticos ⚡<a class="headerlink" href="#miembros-estaticos" title="Permalink to this heading">#</a></h2>
 <p>Los miembros estáticos pertenecen a la clase en su conjunto en lugar de a instancias individuales de la clase. Son útiles para definir métodos o propiedades que no dependen del estado de una instancia.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Utilidades</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">PI</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">calcularCircunferencia</span><span class="p">(</span><span class="nx">radio</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">radio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">calcularAreaCirculo</span><span class="p">(</span><span class="nx">radio</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">PI</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">radio</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">radio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Acceder a miembros estáticos sin necesidad de crear una instancia de la clase</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Utilidades</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 3.14159</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Utilidades</span><span class="p">.</span><span class="nx">calcularCircunferencia</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 31.4159</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Utilidades</span><span class="p">.</span><span class="nx">calcularAreaCirculo</span><span class="p">(</span><span class="mf">5</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 78.53975</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14159
+31.4159
+78.53975
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="bloques-estaticos-en-clases">
 <h2>Bloques estáticos en Clases 🧱<a class="headerlink" href="#bloques-estaticos-en-clases" title="Permalink to this heading">#</a></h2>
 <p>Los bloques estáticos en clases son segmentos de código que se ejecutan una sola vez cuando se carga la clase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Ejemplo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="nx">mensaje</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">mensaje</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">mensaje</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">){</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="nx">mensaje</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Bloque estático</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Este bloque estático se ejecuta una vez cuando se carga la clase.&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="k">for</span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="o">=</span><span class="mf">0</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">&lt;</span><span class="mf">3</span><span class="p">;</span><span class="w"> </span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+
+<span class="w">            </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Se puede meter funcionalidad similar al construntor pero cuando se cargal la clase&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="nx">Ejemplo</span><span class="p">.</span><span class="nx">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;¡Hola desde el bloque estático!&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">Ejemplo</span><span class="p">.</span><span class="nx">mensaje</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: &quot;¡Hola desde el bloque estático!&quot;</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">unEjemplo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Ejemplo</span><span class="p">(</span><span class="s2">&quot;no pasa nada&quot;</span><span class="p">);</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">otroEjemplo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Ejemplo</span><span class="p">(</span><span class="s2">&quot;no pasa nada&quot;</span><span class="p">);</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">unEjemplo</span><span class="p">.</span><span class="nx">mensaje</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Este bloque estático se ejecuta una vez cuando se carga la clase.
+Se puede meter funcionalidad similar al construntor pero cuando se cargal la clase
+Se puede meter funcionalidad similar al construntor pero cuando se cargal la clase
+Se puede meter funcionalidad similar al construntor pero cuando se cargal la clase
+¡Hola desde el bloque estático!
+no pasa nada
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="clases-genericas">
 <h2>Clases Genéricas 🧬<a class="headerlink" href="#clases-genericas" title="Permalink to this heading">#</a></h2>
 <p>Las clases genéricas permiten definir clases que pueden trabajar con cualquier tipo de datos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Caja</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">contenido</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">contenido</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">contenido</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">contenido</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">obtenerContenido</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">T</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">contenido</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Crear una instancia de Caja para números</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cajaNumeros</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Caja</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">42</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cajaNumeros</span><span class="p">.</span><span class="nx">obtenerContenido</span><span class="p">());</span><span class="w"> </span><span class="c1">// Output: 42</span>
+
+<span class="c1">// Crear una instancia de Caja para cadenas de texto</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">cajaTexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Caja</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s2">&quot;Hola, mundo!&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">cajaTexto</span><span class="p">.</span><span class="nx">obtenerContenido</span><span class="p">());</span><span class="w"> </span><span class="c1">// Output: &quot;Hola, mundo!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+Hola, mundo!
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="this-en-tiempo-de-ejecucion-en-clases">
 <h2><code class="docutils literal notranslate"><span class="pre">this</span></code> en Tiempo de Ejecución en Clases 🕒<a class="headerlink" href="#this-en-tiempo-de-ejecucion-en-clases" title="Permalink to this heading">#</a></h2>
 <p>El uso de <code class="docutils literal notranslate"><span class="pre">this</span></code> en clases puede ser complejo. Las funciones de flecha, los parámetros <code class="docutils literal notranslate"><span class="pre">this</span></code> y los tipos basados en <code class="docutils literal notranslate"><span class="pre">this</span></code> son aspectos importantes a considerar.</p>
-</section>
-<section id="propiedades-de-parametros">
-<h2>Propiedades de Parámetros 🎯<a class="headerlink" href="#propiedades-de-parametros" title="Permalink to this heading">#</a></h2>
-<p>Las propiedades de parámetros nos permiten simplificar la inicialización de propiedades de clase basadas en los parámetros del constructor.</p>
-</section>
-<section id="expresiones-de-clase">
-<h2>Expresiones de Clase 💡<a class="headerlink" href="#expresiones-de-clase" title="Permalink to this heading">#</a></h2>
-<p>Las expresiones de clase son una forma alternativa de definir clases que pueden ser anónimas y asignadas a variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">MyClass</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método que utiliza una función de flecha</span>
+<span class="w">    </span><span class="nx">arrowFunction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Valor de this dentro de arrowFunction:&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método que utiliza un parámetro this</span>
+<span class="w">    </span><span class="nx">methodWithThis</span><span class="p">(</span><span class="nx">this</span><span class="o">:</span><span class="w"> </span><span class="kt">MyClass</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Valor de this dentro de methodWithThis:&quot;</span><span class="p">,</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Método que devuelve el tipo de la clase misma</span>
+<span class="w">    </span><span class="nx">getThisType</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+<span class="c1">//eje</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">obj</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">MyClass</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+
+<span class="c1">// Llamada a método que utiliza una función de flecha</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">arrowFunction</span><span class="p">();</span>
+
+<span class="c1">// Llamada a método que utiliza un parámetro this</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">methodWithThis</span><span class="p">();</span>
+
+<span class="c1">// Obtener el tipo de la instancia de la clase</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">objType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obj</span><span class="p">.</span><span class="nx">getThisType</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tipo de la instancia:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">objType</span><span class="p">);</span>
+
+
+
+
+<span class="c1">//ejemplo avanzado de usi this para obtener informacion de la clase y sus hijos</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">ObjetoSistemaArchivos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">esArchivo</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">Archivo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">Archivo</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">esDirectorio</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">Directorio</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="ow">instanceof</span><span class="w"> </span><span class="nx">Directorio</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="nx">esEnRed</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="nx">is</span><span class="w"> </span><span class="nx">EnRed</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="k">this</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">enRed</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="k">public</span><span class="w"> </span><span class="nx">ruta</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="nx">enRed</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">   </span>
+<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nx">Archivo</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ObjetoSistemaArchivos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">ruta</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="nx">contenido</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">super</span><span class="p">(</span><span class="nx">ruta</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">   </span>
+<span class="w">  </span><span class="kd">class</span><span class="w"> </span><span class="nx">Directorio</span><span class="w"> </span><span class="k">extends</span><span class="w"> </span><span class="nx">ObjetoSistemaArchivos</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">hijos</span><span class="o">:</span><span class="w"> </span><span class="kt">ObjetoSistemaArchivos</span><span class="p">[];</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">   </span>
+<span class="w">  </span><span class="kd">interface</span><span class="w"> </span><span class="nx">EnRed</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">host</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">   </span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">fso</span><span class="o">:</span><span class="w"> </span><span class="kt">ObjetoSistemaArchivos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Archivo</span><span class="p">(</span><span class="s2">&quot;foo/bar.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;foo&quot;</span><span class="p">);</span>
+<span class="w">   </span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">fso</span><span class="p">.</span><span class="nx">esArchivo</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// fso es un Archivo</span>
+<span class="w">    </span><span class="nx">fso</span><span class="p">.</span><span class="nx">contenido</span><span class="p">;</span><span class="w"> </span><span class="c1">// Acceso a la propiedad contenido</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">fso</span><span class="p">.</span><span class="nx">esDirectorio</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// fso es un Directorio</span>
+<span class="w">    </span><span class="nx">fso</span><span class="p">.</span><span class="nx">hijos</span><span class="p">;</span><span class="w"> </span><span class="c1">// Acceso a la propiedad hijos</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">fso</span><span class="p">.</span><span class="nx">esEnRed</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// fso es EnRed &amp; ObjetoSistemaArchivos</span>
+<span class="w">    </span><span class="nx">fso</span><span class="p">.</span><span class="nx">host</span><span class="p">;</span><span class="w"> </span><span class="c1">// Acceso a la propiedad host</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Valor de this dentro de arrowFunction: 10
+Valor de this dentro de methodWithThis: 10
+Tipo de la instancia: MyClass { value: 10, arrowFunction: [Function: arrowFunction] }
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Cuidado
+En este codigo podemos ver que accedemos a miebros de la clase hijo e inclusive podemos verificar los tipos de la clase hija
+sin embargo es muy poco recomendado ya que puede generar facilmente dependencias circulares y efectos secundarios inesperados
+<code class="docutils literal notranslate"><span class="pre">esArchivo():</span> <span class="pre">this</span> <span class="pre">is</span> <span class="pre">Archivo</span> <span class="pre">{</span>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; <span class="pre">return</span> <span class="pre">this</span> <span class="pre">instanceof</span> <span class="pre">Archivo;</span>&#160;&#160;&#160;&#160; <span class="pre">}</span></code></p>
+</div>
 </section>
 <section id="firmas-de-constructor">
 <h2>Firmas de Constructor 🏷️<a class="headerlink" href="#firmas-de-constructor" title="Permalink to this heading">#</a></h2>
 <p>Las firmas de constructor nos permiten definir interfaces para constructores de clase sin proporcionar una implementación concreta.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">Constructor</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">any</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Example</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Constructor ejecutado con valor:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Definir una firma de constructor</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ConstructorSignature</span><span class="o">:</span><span class="w"> </span><span class="kt">Constructor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Example</span><span class="p">;</span>
+
+<span class="c1">// Utilizar la firma del constructor para crear una instancia de la clase Example</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">ConstructorSignature</span><span class="p">(</span><span class="mf">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Constructor ejecutado con valor: 10
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>¿Y para qué sirve esto?
+Bueno, es especialmente útil en la generación de frameworks, sobre todo en Angular. Hay funciones que requieren constructores específicos en su ciclo de vida para funcionar correctamente. Estas firmas de constructor pueden ser realmente útiles para esta tarea, aunque su aplicación está más orientada a la generación de frameworks.</p>
+</div>
 </section>
-<section id="clases-abstractas-y-miembros">
-<h2>Clases Abstractas y Miembros 🌌<a class="headerlink" href="#clases-abstractas-y-miembros" title="Permalink to this heading">#</a></h2>
-<p>Las clases abstractas y los miembros abstractos son aquellos que no tienen implementación directa y deben ser definidos por clases derivadas.</p>
-</section>
-<section id="relaciones-entre-clases">
-<h2>Relaciones Entre Clases 🤝<a class="headerlink" href="#relaciones-entre-clases" title="Permalink to this heading">#</a></h2>
-<p>Las relaciones entre clases exploran cómo las clases pueden interactuar entre sí, ya sea mediante herencia, implementación de interfaces u otras formas de asociación.</p>
+<section id="decoradores">
+<h2>Decoradores 📣🎧<a class="headerlink" href="#decoradores" title="Permalink to this heading">#</a></h2>
+<p>En TypeScript, los decoradores son funciones especiales que se pueden adjuntar a clases, métodos, propiedades o parámetros para modificar su comportamiento o agregar funcionalidades adicionales. Los decoradores se utilizan comúnmente en aplicaciones TypeScript, especialmente en frameworks como Angular, para añadir metadatos a clases y miembros, o para implementar funcionalidades como inyección de dependencias, validación de datos, registro de eventos, entre otras.</p>
+<p>Para crear un decorador en TypeScript, se define una función que toma uno, dos o tres argumentos, dependiendo del tipo de decorador que se esté creando. Estos argumentos representan el objeto de destino (clase, método, propiedad o parámetro), el nombre del miembro (sólo para decoradores de propiedad o método) y un descriptor de propiedad (sólo para decoradores de propiedad). La función decoradora puede realizar acciones basadas en estos argumentos, como modificar el comportamiento del miembro, agregar metadatos o realizar tareas adicionales.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Definición de la clase Registro</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Registro</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">registrar</span><span class="p">(</span><span class="nx">mensaje</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mensaje</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Definición de un decorador de método personalizado</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">registrarMetodo</span><span class="p">(</span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">descriptor</span><span class="o">:</span><span class="w"> </span><span class="kt">PropertyDescriptor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">metodoOriginal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">metodoOriginal</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`El método </span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb"> fue llamado con los argumentos: </span><span class="si">${</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="si">}</span><span class="sb"> y retornó: </span><span class="si">${</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">resultado</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">descriptor</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Definición de un decorador de método personalizado</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">registrarMetodoycambia</span><span class="p">(</span><span class="nx">target</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">,</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">descriptor</span><span class="o">:</span><span class="w"> </span><span class="kt">PropertyDescriptor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">metodoOriginal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nx">descriptor</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">...args</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">[])</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kd">const</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">metodoOriginal</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="nx">args</span><span class="p">);</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`registra y cambia: El método </span><span class="si">${</span><span class="nx">key</span><span class="si">}</span><span class="sb"> fue llamado con los argumentos: </span><span class="si">${</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span><span class="si">}</span><span class="sb"> y retornó: </span><span class="si">${</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">resultado</span><span class="p">)</span><span class="si">}</span><span class="sb"> pero le sumo 1`</span><span class="p">);</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">resultado</span><span class="w"> </span><span class="o">+</span><span class="mf">1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">descriptor</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c1">// Clase que utiliza el decorador</span>
+<span class="kd">class</span><span class="w"> </span><span class="nx">Ejemplo</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">registro</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Registro</span><span class="p">();</span>
+<span class="w">    </span><span class="kd">@registrarMetodo</span>
+<span class="w">    </span><span class="nx">calcular</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">@registrarMetodoycambia</span>
+<span class="w">    </span><span class="nx">calcularadd</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kd">@registrarMetodoycambia</span>
+<span class="w">    </span><span class="kd">@registrarMetodo</span>
+<span class="w">    </span><span class="nx">calculaMuchoDecorador</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Uso de la clase Ejemplo</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">ejemplo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Ejemplo</span><span class="p">();</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">=</span><span class="nx">ejemplo</span><span class="p">.</span><span class="nx">calcular</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: El método calcular fue llamado con los argumentos: [3,4] y retornó: </span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor</span><span class="p">);</span>
+<span class="nx">valor</span><span class="o">=</span><span class="w"> </span><span class="nx">ejemplo</span><span class="p">.</span><span class="nx">calcularadd</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: El método calcular fue llamado con los argumentos: [3,4] y retornó: 8</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor</span><span class="p">);</span>
+
+<span class="nx">valor</span><span class="o">=</span><span class="w"> </span><span class="nx">ejemplo</span><span class="p">.</span><span class="nx">calculaMuchoDecorador</span><span class="p">(</span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">);</span><span class="w"> </span><span class="c1">// Salida: El método calcular fue llamado con los argumentos: [3,4] y retornó: 8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El método calcular fue llamado con los argumentos: [3,4] y retornó: 7
+7
+registra y cambia: El método calcularadd fue llamado con los argumentos: [3,4] y retornó: 7 pero le sumo 1
+8
+registra y cambia: El método calculaMuchoDecorador fue llamado con los argumentos: [3,4] y retornó: 7 pero le sumo 1
+El método calculaMuchoDecorador fue llamado con los argumentos: [3,4] y retornó: 8
+8
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>¿Y enserio voy a usar esto ?
+Bueno, en este caso sí. Los decoradores son especialmente útiles en ciertos frameworks para extender el funcionamiento de ciertas funciones. Sin embargo, no los crearemos nosotros mismos, sino que los utilizaremos en el contexto adecuado.
+Y si como podemos ver puede modificar nuestros valores que esperamos asi que conocer su funcionamiento mas que para crear las funciones puede ser necesario para depurar codigo inesperado
+<a class="reference external" href="https://www.typescriptlang.org/docs/handbook/decorators.html">referencias a decoradores</a></p>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 referencias<div class="sd-summary-down docutils">
@@ -449,7 +919,7 @@ referencias<div class="sd-summary-down docutils">
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">Este contenido está fuertemente inspirado en la documentación oficial de TypeScript - <a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/classes.html">TypeScriptLang</a> 📚.</p>
+<p class="sd-card-text">Este contenido está fuertemente inspirado en la documentación oficial de TypeScript - <a class="reference external" href="https://www.typescriptlang.org/play/?#example/async-await">TypeScriptLang</a> 📚.</p>
 </div>
 </details></section>
 </section>
@@ -524,11 +994,8 @@ referencias<div class="sd-summary-down docutils">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloques-estaticos-en-clases">Bloques estáticos en Clases 🧱</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-genericas">Clases Genéricas 🧬</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-en-tiempo-de-ejecucion-en-clases"><code class="docutils literal notranslate"><span class="pre">this</span></code> en Tiempo de Ejecución en Clases 🕒</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-parametros">Propiedades de Parámetros 🎯</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-de-clase">Expresiones de Clase 💡</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmas-de-constructor">Firmas de Constructor 🏷️</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-abstractas-y-miembros">Clases Abstractas y Miembros 🌌</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaciones-entre-clases">Relaciones Entre Clases 🤝</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#decoradores">Decoradores 📣🎧</a></li>
 </ul>
   </nav></div>
 
