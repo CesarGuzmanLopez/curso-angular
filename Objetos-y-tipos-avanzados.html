@@ -1,0 +1,811 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Objetos y estructuras &#8212; Curso de Angular</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Objetos-y-tipos-avanzados';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Funciones" href="Funciones.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Curso de Angular</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Introducción a Angular 🅰️
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">TypeScript</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="TypeScript.html">Typescript</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Tipos-de-datos.html">Tipos en TypeScript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Esctructuras-de-control.html">Estructuras de control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funciones.html">Funciones</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Objetos y estructuras</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular/issues/new?title=Issue%20on%20page%20%2FObjetos-y-tipos-avanzados.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Objetos-y-tipos-avanzados.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Objetos y estructuras</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracion-de-objetos">Declaración de Objetos: 🛠️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces">Interfaces: 📑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-objetos">Tipos de Objetos: 🗃️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enums">Enums: 🏷️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-union-y-tipos-de-interseccion">Tipos de Unión y Tipos de Intersección: 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">Type: 🧰</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-genericos">Tipos Genéricos: 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-condicionales">Tipos Condicionales: ❓</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="objetos-y-estructuras">
+<h1>Objetos y estructuras<a class="headerlink" href="#objetos-y-estructuras" title="Permalink to this heading">#</a></h1>
+<section id="declaracion-de-objetos">
+<h2>Declaración de Objetos: 🛠️<a class="headerlink" href="#declaracion-de-objetos" title="Permalink to this heading">#</a></h2>
+<p>En TypeScript, los objetos se pueden declarar utilizando la notación de llaves <code class="docutils literal notranslate"><span class="pre">{}</span></code> y asignando valores a las propiedades.
+en TypeScript existe la palabra clave <code class="docutils literal notranslate"><span class="pre">class</span></code>, que se utiliza para definir clases, una característica fundamental de la programación orientada a objetos (OOP). Las clases en TypeScript permiten definir un modelo para crear objetos que contienen propiedades y métodos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">persona</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Cesar&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">29</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">casado</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="p">};</span>
+
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">key</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">persona</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">key</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">persona</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+<span class="p">}</span>
+<span class="c1">// Pero tambien un objeto se puede crear apartir de un prototipo o clase</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Persona</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="c1">//constructor clasico de una clase</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">edad</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">saludar</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`Hola, soy </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb"> y tengo </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="si">}</span><span class="sb"> años.`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Crear una instancia de la clase Persona</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">cesar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Persona</span><span class="p">(</span><span class="s2">&quot;Cesar&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">29</span><span class="p">);</span>
+<span class="nx">cesar</span><span class="p">.</span><span class="nx">saludar</span><span class="p">();</span><span class="w"> </span><span class="c1">// Output: Hola, soy Juan y tengo 30 años.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nombre: Cesar
+edad: 29
+casado: false
+Hola, soy Cesar y tengo 29 años.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interfaces">
+<h2>Interfaces: 📑<a class="headerlink" href="#interfaces" title="Permalink to this heading">#</a></h2>
+<p>Las interfaces en TypeScript permiten definir la forma de un objeto, especificando qué propiedades debe tener y qué tipo de valor deben tener esas propiedades.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">interface</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">numeroID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span><span class="w"> </span><span class="c1">// Propiedad de solo lectura</span>
+<span class="p">}</span>
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">Perro</span><span class="w"> </span><span class="k">implements</span><span class="w"> </span><span class="nx">Animal</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">//se deben implementar todas las propiedades de la interfaz</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">numeroID</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">dni</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nombre</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">edad</span><span class="p">;</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">numeroID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">dni</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="nx">toString</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="sb">`Hola soy un perro llamado </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">nombre</span><span class="si">}</span><span class="sb"> y tengo </span><span class="si">${</span><span class="k">this</span><span class="p">.</span><span class="nx">edad</span><span class="si">}</span><span class="sb"> años... Digo guau guau🐕`</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">toby</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Perro</span><span class="p">(</span><span class="s2">&quot;Toby&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1234&quot;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">String</span><span class="p">(</span><span class="nx">toby</span><span class="p">));</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola soy un perro llamado Toby y tengo 2 años... Digo guau guau🐕
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tipos-de-objetos">
+<h2>Tipos de Objetos: 🗃️<a class="headerlink" href="#tipos-de-objetos" title="Permalink to this heading">#</a></h2>
+<p>Los objetos en TypeScript pueden tener diferentes formas y tipos, como objetos simples, objetos con propiedades opcionales, objetos con propiedades de solo lectura y entre otras.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Objeto con propiedades opcionales</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Mascota</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">edad?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="c1">// Propiedad opcional</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">perro</span><span class="o">:</span><span class="w"> </span><span class="kt">Mascota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Bobby&quot;</span>
+<span class="p">};</span>
+
+<span class="c1">// Objeto con propiedades de solo lectura</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Punto</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="k">readonly</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">punto</span><span class="o">:</span><span class="w"> </span><span class="kt">Punto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">10</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">20</span><span class="w"> </span><span class="p">};</span>
+<span class="c1">// punto.x = 30; // Error: No se puede asignar a la propiedad de solo lectura &#39;x&#39;</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">perro</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">punto</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{ nombre: &#39;Bobby&#39; }
+{ x: 10, y: 20 }
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="enums">
+<h2>Enums: 🏷️<a class="headerlink" href="#enums" title="Permalink to this heading">#</a></h2>
+<p>Los enums en TypeScript permiten definir un conjunto de constantes con nombres descriptivos, lo que facilita trabajar con conjuntos predefinidos de valores</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">enum</span><span class="w"> </span><span class="nx">DiaSemana</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">Lunes</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Martes</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Miércoles</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Jueves</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Viernes</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">Sábado</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;Domingo con sueño&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;😀&quot;</span>
+
+<span class="p">}</span>
+
+<span class="c1">// Acceder a los valores del enum</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DiaSemana</span><span class="p">.</span><span class="nx">Lunes</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 0</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DiaSemana</span><span class="p">.</span><span class="nx">Miércoles</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="w"> </span><span class="s2">&quot;acceder a los valores del enum: &quot;</span><span class="p">,</span><span class="nx">DiaSemana</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Output: &quot;Lunes&quot;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;acceder a DiaSemana: &quot;</span><span class="p">,</span><span class="nx">DiaSemana</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;acceder a DiaSemana con emoji: &quot;</span><span class="p">,</span><span class="nx">DiaSemana</span><span class="p">[</span><span class="s2">&quot;😀&quot;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+2
+acceder a los valores del enum:  Lunes
+acceder a DiaSemana:  {
+  &#39;0&#39;: &#39;Lunes&#39;,
+  &#39;1&#39;: &#39;Martes&#39;,
+  &#39;2&#39;: &#39;Miércoles&#39;,
+  &#39;3&#39;: &#39;Jueves&#39;,
+  &#39;4&#39;: &#39;Viernes&#39;,
+  &#39;5&#39;: &#39;Sábado&#39;,
+  &#39;6&#39;: &#39;Domingo con sueño&#39;,
+  &#39;7&#39;: &#39;😀&#39;,
+  Lunes: 0,
+  Martes: 1,
+  &#39;Miércoles&#39;: 2,
+  Jueves: 3,
+  Viernes: 4,
+  &#39;Sábado&#39;: 5,
+  &#39;Domingo con sueño&#39;: 6,
+  &#39;😀&#39;: 7
+}
+acceder a DiaSemana con emoji:  7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Resulta que en TypeScript podemos asignar emojis e incluso caracteres especiales como índices en un enum. 😲🎉
+podemos usar emojis en nuestros enums y clases, pero lo que la bomba atomica nos enseño es que aunque podamos hacer algo no significa que lo debamos hacer💣💥.</p>
+</div>
+</section>
+<section id="tipos-de-union-y-tipos-de-interseccion">
+<h2>Tipos de Unión y Tipos de Intersección: 🔗<a class="headerlink" href="#tipos-de-union-y-tipos-de-interseccion" title="Permalink to this heading">#</a></h2>
+<p>TypeScript permite crear tipos de unión (<code class="docutils literal notranslate"><span class="pre">|</span></code>) y tipos de intersección (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) para combinar diferentes tipos de manera flexible</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Definición de una variable que puede ser de tipo number o string</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">numeroOTexto</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+
+<span class="c1">// Ejemplos de asignación de valores válidos</span>
+<span class="nx">numeroOTexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">;</span><span class="w">       </span><span class="c1">// number</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`numeroOTexto: </span><span class="si">${</span><span class="nx">numeroOTexto</span><span class="si">}</span><span class="sb"> tipo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">numeroOTexto</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="nx">numeroOTexto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hola&quot;</span><span class="p">;</span><span class="w">   </span><span class="c1">// string</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`numeroOTexto: </span><span class="si">${</span><span class="nx">numeroOTexto</span><span class="si">}</span><span class="sb"> tipo: </span><span class="si">${</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">numeroOTexto</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<span class="c1">// Ejemplo de asignación de un valor inválido</span>
+<span class="c1">// numeroOTexto = true;  // Error: Tipo &#39;boolean&#39; no asignable a &#39;number | string&#39;</span>
+<span class="c1">//esto es especialmente util cuando no sabes exactamente que tipo de datos debes usar en una entrada de texto en la web</span>
+
+<span class="c1">//Tipos de Intersección (&amp;)</span>
+
+<span class="c1">// Definición de dos interfaces con propiedades diferentes</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Comida</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">tipo</span><span class="o">:</span><span class="w">  </span><span class="s2">&quot;dulce&quot;</span><span class="w"> </span><span class="o">|</span><span class="s2">&quot;salado&quot;</span><span class="p">;</span><span class="c1">//si los tipos tambien pueden ser definidos como string para darle posibles valores predefinidos</span>
+<span class="w">    </span><span class="nx">costo?</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">costo_envio?</span><span class="o">:</span><span class="w"> </span><span class="kt">500</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1000</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="mf">1500</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">interface</span><span class="w"> </span><span class="nx">Postre</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">calorias</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Intersección de interfaces</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">helado</span><span class="o">:</span><span class="w"> </span><span class="kt">Comida</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nx">Postre</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Helado&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">calorias</span><span class="o">:</span><span class="w"> </span><span class="kt">200</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">tipo</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dulce&quot;</span>
+<span class="p">};</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">helado</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: { nombre: &#39;Helado&#39;, calorias: 200, tipo:&quot;dulce&quot; } // como se puede ver se unen las propiedades de ambas interfaces</span>
+<span class="c1">//sin embargo no se pueden unir dos propiedades con el mismo nombre si no son del mismo tipo</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numeroOTexto: 10 tipo: number
+numeroOTexto: Hola tipo: string
+{ nombre: &#39;Helado&#39;, calorias: 200, tipo: &#39;dulce&#39; }
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Podemos ver que en <code class="docutils literal notranslate"><span class="pre">tipo:</span> <span class="pre">&quot;dulce&quot;</span> <span class="pre">|</span> <span class="pre">&quot;salado&quot;</span></code>, el operador <code class="docutils literal notranslate"><span class="pre">|</span></code> se utiliza para predefinir los posibles valores que puede tener la propiedad <code class="docutils literal notranslate"><span class="pre">tipo</span></code>, limitándolos a “dulce” o “salado”. Del mismo modo, en <code class="docutils literal notranslate"><span class="pre">costo_envio</span></code>, que igualmente son valores opcionales, el operador <code class="docutils literal notranslate"><span class="pre">|</span></code> se utiliza para predefinir los valores permitidos.</p>
+</div>
+</section>
+<section id="type">
+<h2>Type: 🧰<a class="headerlink" href="#type" title="Permalink to this heading">#</a></h2>
+<p>El keyword <code class="docutils literal notranslate"><span class="pre">type</span></code> se utiliza para definir alias de tipo en TypeScript, permitiendo crear nombres personalizados para tipos existentes o complejos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Definición de un alias de tipo para representar el tipo de juguete</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">Juguete</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">categoria</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">edadRecomendada</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">// Definición de un alias de tipo para representar el tipo de juguete de Toy Story</span>
+<span class="kr">type</span><span class="w"> </span><span class="nx">JugueteToyStory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Juguete</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">franquicia</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">};</span>
+
+<span class="c1">// Ejemplo de juguetes de Toy Story</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">juguete1</span><span class="o">:</span><span class="w"> </span><span class="kt">JugueteToyStory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Buzz Lightyear&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">categoria</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Figura de acción&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">edadRecomendada</span><span class="o">:</span><span class="w"> </span><span class="kt">6</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">franquicia</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Toy Story&quot;</span>
+<span class="p">};</span>
+
+<span class="kd">let</span><span class="w"> </span><span class="nx">juguete2</span><span class="o">:</span><span class="w"> </span><span class="kt">JugueteToyStory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Woody&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">categoria</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Muñeco de peluche&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">edadRecomendada</span><span class="o">:</span><span class="w"> </span><span class="kt">4</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">franquicia</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Toy Story&quot;</span>
+<span class="p">};</span>
+
+<span class="c1">// Imprimir emojis usando console.log</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;🚀 Juguete de Toy Story:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">juguete1</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;🤠 Juguete de Toy Story:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">juguete2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>🚀 Juguete de Toy Story: {
+  nombre: &#39;Buzz Lightyear&#39;,
+  categoria: &#39;Figura de acción&#39;,
+  edadRecomendada: 6,
+  franquicia: &#39;Toy Story&#39;
+}
+🤠 Juguete de Toy Story: {
+  nombre: &#39;Woody&#39;,
+  categoria: &#39;Muñeco de peluche&#39;,
+  edadRecomendada: 4,
+  franquicia: &#39;Toy Story&#39;
+}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Se podria decir que esto es de las propiedades mas importantes de typescript ya que permite un polimorfismo muy grande que es ocupado en la mayoria de frameworks</p>
+</div>
+</section>
+<section id="tipos-genericos">
+<h2>Tipos Genéricos: 🧬<a class="headerlink" href="#tipos-genericos" title="Permalink to this heading">#</a></h2>
+<p>Los tipos genéricos permiten escribir funciones y estructuras de datos que puedan trabajar con una variedad de tipos.</p>
+</section>
+<section id="tipos-condicionales">
+<h2>Tipos Condicionales: ❓<a class="headerlink" href="#tipos-condicionales" title="Permalink to this heading">#</a></h2>
+<p>Los tipos condicionales en TypeScript permiten crear tipos que dependen de condiciones sobre otros tipos.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "tslab"
+        },
+        kernelOptions: {
+            name: "tslab",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'tslab'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Funciones.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Funciones</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracion-de-objetos">Declaración de Objetos: 🛠️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interfaces">Interfaces: 📑</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-objetos">Tipos de Objetos: 🗃️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enums">Enums: 🏷️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-union-y-tipos-de-interseccion">Tipos de Unión y Tipos de Intersección: 🔗</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">Type: 🧰</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-genericos">Tipos Genéricos: 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-condicionales">Tipos Condicionales: ❓</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Cesar Gerardo Guzman Lopez
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
