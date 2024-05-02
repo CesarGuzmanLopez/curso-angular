@@ -11,3 +11,5 @@ parts:
         sections:
           - file: Tipos-de-datos
           - file: Esctructuras-de-control
+          - file: Funciones
+          - file: Objetos-y-tipos-avanzados
