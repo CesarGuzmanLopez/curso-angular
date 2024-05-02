@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Funciones &#8212; Curso de Angular</title>
+    <title>Funcionalidades de clases y objetos &#8212; Curso de Angular</title>
   
   
   
@@ -62,11 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Funciones';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Propiedades-de-objetos';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Clases, Objetos y Estructuras" href="Objetos-y-tipos-avanzados.html" />
-    <link rel="prev" title="Estructuras de control" href="Esctructuras-de-control.html" />
+    <link rel="next" title="Programacion declarativa" href="Programacion-declarativa.html" />
+    <link rel="prev" title="Clases, Objetos y Estructuras" href="Objetos-y-tipos-avanzados.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -167,9 +167,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="TypeScript.html">Typescript</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Tipos-de-datos.html">Tipos en TypeScript</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Esctructuras-de-control.html">Estructuras de control</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Funciones</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Funciones.html">Funciones</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Objetos-y-tipos-avanzados.html">Clases, Objetos y Estructuras</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Propiedades-de-objetos.html">Funcionalidades de clases y objetos</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Funcionalidades de clases y objetos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Programacion-declarativa.html">Programacion declarativa</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Programacion-concurrente.html">Concurrencia</a></li>
 </ul>
@@ -245,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular/issues/new?title=Issue%20on%20page%20%2FFunciones.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular/issues/new?title=Issue%20on%20page%20%2FPropiedades-de-objetos.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -275,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Funciones.ipynb" target="_blank"
+      <li><a href="_sources/Propiedades-de-objetos.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -346,7 +346,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -357,11 +359,30 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Funciones</h1>
+    <h1>Funcionalidades de clases y objetos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miembros-de-clase">Miembros de Clase 🏗️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herencia-de-clases">Herencia de Clases 🏰</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibilidad-de-miembros">Visibilidad de Miembros 🔍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miembros-estaticos">Miembros Estáticos ⚡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloques-estaticos-en-clases">Bloques estáticos en Clases 🧱</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-genericas">Clases Genéricas 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-en-tiempo-de-ejecucion-en-clases"><code class="docutils literal notranslate"><span class="pre">this</span></code> en Tiempo de Ejecución en Clases 🕒</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-parametros">Propiedades de Parámetros 🎯</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-de-clase">Expresiones de Clase 💡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmas-de-constructor">Firmas de Constructor 🏷️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-abstractas-y-miembros">Clases Abstractas y Miembros 🌌</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaciones-entre-clases">Relaciones Entre Clases 🤝</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -371,103 +392,66 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="funciones">
-<h1>Funciones<a class="headerlink" href="#funciones" title="Permalink to this heading">#</a></h1>
-<ol class="arabic simple">
-<li><p><strong>Declaración de funciones:</strong> 📝</p>
-<ul class="simple">
-<li><p>En TypeScript, las funciones se pueden declarar utilizando la palabra clave <code class="docutils literal notranslate"><span class="pre">function</span></code>. Pueden tener un nombre y pueden o no tener parámetros y un tipo de retorno.</p></li>
-</ul>
-</li>
-<li><p><strong>Parámetros y tipos de retorno:</strong> 🔄</p>
-<ul class="simple">
-<li><p>Las funciones pueden tomar parámetros que especifican el tipo de datos que esperan recibir. También pueden especificar el tipo de dato que devuelven utilizando la notación <code class="docutils literal notranslate"><span class="pre">:</span> <span class="pre">tipo</span></code> después de la lista de parámetros.</p></li>
-</ul>
-</li>
-<li><p><strong>Funciones anónimas y de flecha:</strong> ➡️</p>
-<ul class="simple">
-<li><p>TypeScript permite definir funciones anónimas que no tienen nombre y se asignan a variables o se pasan como argumentos a otras funciones. Las funciones de flecha (<code class="docutils literal notranslate"><span class="pre">=&gt;</span></code>) proporcionan una sintaxis más concisa para definir funciones y conservan el contexto de <code class="docutils literal notranslate"><span class="pre">this</span></code>.</p></li>
-</ul>
-</li>
-<li><p><strong>Sobrecarga de funciones:</strong> 🔄🔄</p>
-<ul class="simple">
-<li><p>TypeScript permite definir múltiples firmas de función para una misma función, lo que se conoce como sobrecarga de funciones. Esto permite que la misma función pueda aceptar diferentes tipos de argumentos y producir diferentes tipos de resultados. sin embargp esto no significa polimorfismo ya que la logica la debe mantener una unica funcion, para un tipo de logica polimorfica podriamos usar las funciones con parametros opcionales las cuales te permiten delcarar valores por default una funcion puede tener uno o varios parametros obligatorios y opcionales pero los obligatorios siempre deben ir primero</p></li>
-</ul>
-</li>
-<li><p><strong>Funciones genéricas y su aplicación:</strong> 🧬</p>
-<ul class="simple">
-<li><p>Las funciones genéricas en TypeScript permiten escribir funciones que pueden trabajar con una variedad de tipos de datos sin perder la información sobre esos tipos. Esto hace que las funciones sean más flexibles y reutilizables.</p></li>
-</ul>
-</li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Declaración de función con parámetros y tipo de retorno</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">suma</span><span class="p">(</span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Función anónima asignada a una variable </span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">saludar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="sb">`¡Hola, </span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">!`</span><span class="p">);</span>
-<span class="p">}</span>
-
-<span class="c1">// Función de flecha con parámetros y tipo de retorno</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">multiplicar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">b</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Sobrecarga de funciones</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">longitud</span><span class="p">(</span><span class="nx">array</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">longitud</span><span class="p">(</span><span class="nx">cadena</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">longitud</span><span class="p">(</span><span class="nx">valor</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">valor</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="c1">// Función con parámetros opcionales</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">DatosPersonales</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span><span class="w"> </span><span class="nx">apellido</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">=</span><span class="mf">0</span><span class="p">){</span>
-<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="sb">`Nombre: </span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">, Apellido: </span><span class="si">${</span><span class="nx">apellido</span><span class="si">}</span><span class="sb">, Edad: </span><span class="si">${</span><span class="nx">edad</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
-<span class="p">}</span>
-
-
-
-<span class="c1">// Función genérica</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">imprimirElementos</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">elementos</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">[])</span><span class="o">:</span><span class="w"> </span><span class="ow">void</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">elementos</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">elemento</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">elemento</span><span class="p">));</span>
-<span class="p">}</span>
-
-<span class="c1">// Llamadas a las funciones</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">suma</span><span class="p">(</span><span class="mf">5</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 8</span>
-<span class="nx">saludar</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: ¡Hola, Juan!</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">multiplicar</span><span class="p">(</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 8</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">longitud</span><span class="p">(</span><span class="s2">&quot;Hola&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 4</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">longitud</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]));</span><span class="w"> </span><span class="c1">// Output: 3</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DatosPersonales</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Perez&quot;</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: Nombre: Juan, Apellido: Perez, Edad: 0 // ya que no se le paso la edad</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">DatosPersonales</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">));</span><span class="w"> </span>
-
-<span class="nx">imprimirElementos</span><span class="p">([</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Output: 1, 2, 3</span>
-<span class="nx">imprimirElementos</span><span class="p">([</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;c&quot;</span><span class="p">]);</span><span class="w"> </span><span class="c1">// Output: a, b, c</span>
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="funcionalidades-de-clases-y-objetos">
+<h1>Funcionalidades de clases y objetos<a class="headerlink" href="#funcionalidades-de-clases-y-objetos" title="Permalink to this heading">#</a></h1>
+<p>En este conjunto de temas avanzados, exploraremos características poderosas y sofisticadas de las clases en TypeScript, que van más allá de las funcionalidades básicas de definir objetos y métodos. A continuación, presentamos una breve descripción de cada uno de estos temas</p>
+<section id="miembros-de-clase">
+<h2>Miembros de Clase 🏗️<a class="headerlink" href="#miembros-de-clase" title="Permalink to this heading">#</a></h2>
+<p>Los miembros de clase, que incluyen campos, métodos, getters/setters y firmas de índice, son fundamentales para definir el comportamiento y las propiedades de una clase.</p>
+</section>
+<section id="herencia-de-clases">
+<h2>Herencia de Clases 🏰<a class="headerlink" href="#herencia-de-clases" title="Permalink to this heading">#</a></h2>
+<p>La herencia de clases nos permite crear nuevas clases basadas en clases existentes, compartiendo así comportamientos y propiedades.</p>
+</section>
+<section id="visibilidad-de-miembros">
+<h2>Visibilidad de Miembros 🔍<a class="headerlink" href="#visibilidad-de-miembros" title="Permalink to this heading">#</a></h2>
+<p>La visibilidad de miembros, como <code class="docutils literal notranslate"><span class="pre">public</span></code>, <code class="docutils literal notranslate"><span class="pre">protected</span></code> y <code class="docutils literal notranslate"><span class="pre">private</span></code>, controla el acceso a los miembros de una clase desde fuera de la misma.</p>
+</section>
+<section id="miembros-estaticos">
+<h2>Miembros Estáticos ⚡<a class="headerlink" href="#miembros-estaticos" title="Permalink to this heading">#</a></h2>
+<p>Los miembros estáticos pertenecen a la clase en su conjunto en lugar de a instancias individuales de la clase. Son útiles para definir métodos o propiedades que no dependen del estado de una instancia.</p>
+</section>
+<section id="bloques-estaticos-en-clases">
+<h2>Bloques estáticos en Clases 🧱<a class="headerlink" href="#bloques-estaticos-en-clases" title="Permalink to this heading">#</a></h2>
+<p>Los bloques estáticos en clases son segmentos de código que se ejecutan una sola vez cuando se carga la clase.</p>
+</section>
+<section id="clases-genericas">
+<h2>Clases Genéricas 🧬<a class="headerlink" href="#clases-genericas" title="Permalink to this heading">#</a></h2>
+<p>Las clases genéricas permiten definir clases que pueden trabajar con cualquier tipo de datos.</p>
+</section>
+<section id="this-en-tiempo-de-ejecucion-en-clases">
+<h2><code class="docutils literal notranslate"><span class="pre">this</span></code> en Tiempo de Ejecución en Clases 🕒<a class="headerlink" href="#this-en-tiempo-de-ejecucion-en-clases" title="Permalink to this heading">#</a></h2>
+<p>El uso de <code class="docutils literal notranslate"><span class="pre">this</span></code> en clases puede ser complejo. Las funciones de flecha, los parámetros <code class="docutils literal notranslate"><span class="pre">this</span></code> y los tipos basados en <code class="docutils literal notranslate"><span class="pre">this</span></code> son aspectos importantes a considerar.</p>
+</section>
+<section id="propiedades-de-parametros">
+<h2>Propiedades de Parámetros 🎯<a class="headerlink" href="#propiedades-de-parametros" title="Permalink to this heading">#</a></h2>
+<p>Las propiedades de parámetros nos permiten simplificar la inicialización de propiedades de clase basadas en los parámetros del constructor.</p>
+</section>
+<section id="expresiones-de-clase">
+<h2>Expresiones de Clase 💡<a class="headerlink" href="#expresiones-de-clase" title="Permalink to this heading">#</a></h2>
+<p>Las expresiones de clase son una forma alternativa de definir clases que pueden ser anónimas y asignadas a variables.</p>
+</section>
+<section id="firmas-de-constructor">
+<h2>Firmas de Constructor 🏷️<a class="headerlink" href="#firmas-de-constructor" title="Permalink to this heading">#</a></h2>
+<p>Las firmas de constructor nos permiten definir interfaces para constructores de clase sin proporcionar una implementación concreta.</p>
+</section>
+<section id="clases-abstractas-y-miembros">
+<h2>Clases Abstractas y Miembros 🌌<a class="headerlink" href="#clases-abstractas-y-miembros" title="Permalink to this heading">#</a></h2>
+<p>Las clases abstractas y los miembros abstractos son aquellos que no tienen implementación directa y deben ser definidos por clases derivadas.</p>
+</section>
+<section id="relaciones-entre-clases">
+<h2>Relaciones Entre Clases 🤝<a class="headerlink" href="#relaciones-entre-clases" title="Permalink to this heading">#</a></h2>
+<p>Las relaciones entre clases exploran cómo las clases pueden interactuar entre sí, ya sea mediante herencia, implementación de interfaces u otras formas de asociación.</p>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+referencias<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Este contenido está fuertemente inspirado en la documentación oficial de TypeScript - <a class="reference external" href="https://www.typescriptlang.org/docs/handbook/2/classes.html">TypeScriptLang</a> 📚.</p>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8
-¡Hola, Juan!
-8
-4
-3
-Nombre: Juan, Apellido: Perez, Edad: 0
-Nombre: Juan, Apellido: , Edad: 0
-1
-2
-3
-a
-b
-c
-</pre></div>
-</div>
-</div>
-</div>
+</details></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -501,20 +485,20 @@ c
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Esctructuras-de-control.html"
+       href="Objetos-y-tipos-avanzados.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Estructuras de control</p>
+        <p class="prev-next-title">Clases, Objetos y Estructuras</p>
       </div>
     </a>
     <a class="right-next"
-       href="Objetos-y-tipos-avanzados.html"
+       href="Programacion-declarativa.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Clases, Objetos y Estructuras</p>
+        <p class="prev-next-title">Programacion declarativa</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -524,6 +508,31 @@ c
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miembros-de-clase">Miembros de Clase 🏗️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#herencia-de-clases">Herencia de Clases 🏰</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visibilidad-de-miembros">Visibilidad de Miembros 🔍</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#miembros-estaticos">Miembros Estáticos ⚡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bloques-estaticos-en-clases">Bloques estáticos en Clases 🧱</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-genericas">Clases Genéricas 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-en-tiempo-de-ejecucion-en-clases"><code class="docutils literal notranslate"><span class="pre">this</span></code> en Tiempo de Ejecución en Clases 🕒</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#propiedades-de-parametros">Propiedades de Parámetros 🎯</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#expresiones-de-clase">Expresiones de Clase 💡</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#firmas-de-constructor">Firmas de Constructor 🏷️</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clases-abstractas-y-miembros">Clases Abstractas y Miembros 🌌</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#relaciones-entre-clases">Relaciones Entre Clases 🤝</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

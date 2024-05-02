@@ -13,3 +13,6 @@ parts:
           - file: Esctructuras-de-control
           - file: Funciones
           - file: Objetos-y-tipos-avanzados
+          - file: Propiedades-de-objetos
+          - file: Programacion-declarativa
+          - file: Programacion-concurrente
