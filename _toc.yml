@@ -9,5 +9,5 @@ parts:
     chapters:
       - file: TypeScript
         sections:
-          - file: tipos-de-datos
-          - file: tipos-de-datos-avanzados
+          - file: Tipos-de-datos
+          - file: Esctructuras-de-control
