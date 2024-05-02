@@ -147,8 +147,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Angular - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Angular - Home"/>`);</script>
   
-    <p class="title logo__title">Curso de Angular</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -370,9 +376,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#async-await">Async/Await ⏳</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#promesas">Promesas 🤝</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#callbacks">Callbacks 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Concurrencia 🔀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-loop">Event Loop 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-workers">Web Workers 💼</a></li>
 </ul>
             </nav>
@@ -390,26 +394,190 @@ document.write(`
 <section id="async-await">
 <h2>Async/Await ⏳<a class="headerlink" href="#async-await" title="Permalink to this heading">#</a></h2>
 <p>Async/Await es una forma moderna y más legible de trabajar con operaciones asíncronas en TypeScript. Permite escribir código asincrónico de manera síncrona, facilitando el manejo de promesas y evitando el anidamiento excesivo de callbacks.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Función asincrónica que simula una operación de espera</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">esperar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">ms</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">ms</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="c1">// Función asincrónica que realiza una operación y espera</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">operacionAsincronica</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Iniciando operación...&quot;</span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Simular una espera de 2 segundos</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">esperar</span><span class="p">(</span><span class="mf">2000</span><span class="p">);</span>
+
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Operación completada.&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error en la operación:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Llamar a la función asincrónica</span>
+<span class="nx">operacionAsincronica</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iniciando operación...
+Promise { &lt;pending&gt; }
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="promesas">
 <h2>Promesas 🤝<a class="headerlink" href="#promesas" title="Permalink to this heading">#</a></h2>
-<p>Las promesas son objetos que representan la eventual finalización (o falla) de una operación asincrónica y su valor resultante.</p>
-</section>
-<section id="callbacks">
-<h2>Callbacks 🔄<a class="headerlink" href="#callbacks" title="Permalink to this heading">#</a></h2>
-<p>Los callbacks son funciones que se pasan como argumentos a otras funciones y se ejecutan después de que se complete una operación asincrónica.</p>
+<p>Las promesas son objetos que representan la eventual finalización (o falla) de una operación asincrónica y su valor resultante.
+<strong>Las promesas simplemente se pueden usar de esta forma</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Ejemplo de creación y uso de una promesa en TypeScript</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">tomaTuTiempo</span><span class="p">(</span><span class="nx">ms</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span><span class="w"> </span><span class="nx">reject</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">resolve</span><span class="p">(</span><span class="sb">`La operación se completó después de </span><span class="si">${</span><span class="nx">ms</span><span class="si">}</span><span class="sb"> milisegundos.`</span><span class="p">);</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="nx">ms</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Iniciando operación...&quot;</span><span class="p">);</span>
+
+<span class="nx">tomaTuTiempo</span><span class="p">(</span><span class="mf">2000</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mensaje</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: La operación se completó después de 2000 milisegundos.</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="p">.</span><span class="k">catch</span><span class="p">((</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Ocurrió un error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iniciando operación...
+Promise { &lt;pending&gt; }
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Aqui un ejemplo de como se usaria con async y await ya que eventualmente esta siempre van de la mano</strong>
+las funciones await siempre esperara que acabe una funcion y las funciones async siempre regresan una promesa</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Ejemplo de uso de async/await con una función asíncrona que devuelve una promesa en TypeScript</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">ejecutarOperacion</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Iniciando operación...&quot;</span><span class="p">);</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">mensaje</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">tomaTuTiempo</span><span class="p">(</span><span class="mf">2000</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mensaje</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: La operación se completó después de 2000 milisegundos.</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Ocurrió un error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+
+<span class="w">  </span>
+<span class="w">  </span><span class="c1">// Llamada a la función asincrónica</span>
+<span class="w">  </span><span class="nx">ejecutarOperacion</span><span class="p">();</span>
+<span class="w">  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iniciando operación...
+Promise { &lt;pending&gt; }
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La operación se completó después de 2000 milisegundos.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="id1">
 <h2>Concurrencia 🔀<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p>La concurrencia en TypeScript se refiere a la capacidad de ejecutar múltiples tareas simultáneamente, aprovechando eficientemente los recursos del sistema.</p>
-</section>
-<section id="event-loop">
-<h2>Event Loop 🔄<a class="headerlink" href="#event-loop" title="Permalink to this heading">#</a></h2>
-<p>El Event Loop es un mecanismo utilizado en entornos de ejecución JavaScript para manejar las operaciones asíncronas de manera eficiente, garantizando que el código se ejecute de manera ordenada y sin bloqueos.</p>
+<p>La concurrencia en TypeScript es como tener varios hilos de ejecución trabajando al mismo tiempo, lo que nos permite realizar múltiples tareas de manera eficiente. Para esperar que varias tareas asíncronas se completen al mismo tiempo, utilizamos <code class="docutils literal notranslate"><span class="pre">Promise.all</span></code>. Esta función nos permite esperar a que todas las promesas se resuelvan, lo que significa que esperamos a que todas las tareas finalicen antes de continuar con el flujo de ejecución.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Ejemplo de concurrencia con Promesas y Promise.all en TypeScript</span>
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">tarea1</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tarea 1 completada.&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">resolve</span><span class="p">(</span><span class="mf">1</span><span class="p">);</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">2000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">tarea2</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Promise</span><span class="p">(</span><span class="nx">resolve</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Tarea 2 completada.&quot;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">resolve</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="mf">3000</span><span class="p">);</span>
+<span class="w">  </span><span class="p">});</span>
+<span class="p">}</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">ejecutarConcurrencia</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nb">Promise</span><span class="o">&lt;</span><span class="ow">void</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Iniciando ejecución concurrente...&quot;</span><span class="p">);</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">resultados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nb">Promise</span><span class="p">.</span><span class="nx">all</span><span class="p">([</span><span class="nx">tarea1</span><span class="p">(),</span><span class="w"> </span><span class="nx">tarea2</span><span class="p">()]);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Resultados:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">resultados</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: Resultados: [1, 2]</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Todas las tareas han sido completadas.&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Ocurrió un error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="nx">ejecutarConcurrencia</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iniciando ejecución concurrente...
+Promise { &lt;pending&gt; }
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operación completada.
+La operación se completó después de 2000 milisegundos.
+La operación se completó después de 2000 milisegundos.
+Tarea 1 completada.
+Tarea 2 completada.
+Resultados: [ 1, 2 ]
+Todas las tareas han sido completadas.
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="web-workers">
 <h2>Web Workers 💼<a class="headerlink" href="#web-workers" title="Permalink to this heading">#</a></h2>
 <p>Los Web Workers son un mecanismo de concurrencia en navegadores web que permite ejecutar scripts en segundo plano, separados del hilo principal de ejecución de JavaScript, lo que mejora la capacidad de respuesta de las aplicaciones y la experiencia del usuario.</p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// worker.ts</span>
+<span class="nx">self</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Mensaje recibido en el worker:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">data</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">self</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// main.ts</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">worker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Worker</span><span class="p">(</span><span class="s1">&#39;worker.js&#39;</span><span class="p">);</span>
+<span class="nx">worker</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Resultado recibido desde el worker:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">dataToSend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">5</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Enviando mensaje al worker:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">dataToSend</span><span class="p">);</span>
+<span class="nx">worker</span><span class="p">.</span><span class="nx">postMessage</span><span class="p">(</span><span class="nx">dataToSend</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>bien este codigo debe ser dividido en 2 archivos, basicamente es analogo al paso de mensajes entre 2 programas ejecutandose</p>
 </section>
 </section>
 
@@ -469,9 +637,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#async-await">Async/Await ⏳</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#promesas">Promesas 🤝</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#callbacks">Callbacks 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Concurrencia 🔀</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#event-loop">Event Loop 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-workers">Web Workers 💼</a></li>
 </ul>
   </nav></div>

@@ -148,8 +148,14 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Curso de Angular - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Curso de Angular - Home"/>`);</script>
   
-    <p class="title logo__title">Curso de Angular</p>
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
@@ -376,6 +382,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-union-y-tipos-de-interseccion">Tipos de Unión y Tipos de Intersección: 🔗</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">Type: 🧰</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-genericos">Tipos Genéricos: 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-try-cath">Errores try/cath ☠️</a></li>
 </ul>
             </nav>
         </div>
@@ -769,6 +776,39 @@ Tamaño de la pila: 3
 </div>
 </div>
 </section>
+<section id="errores-try-cath">
+<h2>Errores try/cath ☠️<a class="headerlink" href="#errores-try-cath" title="Permalink to this heading">#</a></h2>
+<p>En TypeScript, al igual que en JavaScript, se pueden manejar errores y excepciones para gestionar situaciones inesperadas durante la ejecución del programa. Aquí tienes un ejemplo que muestra cómo puedes manejar errores y excepciones en TypeScript</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">y</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;No se puede dividir por cero.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">x</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">y</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span>
+<span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Resultado de la división:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Ocurrió un error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Este bloque se ejecuta siempre, independientemente de si ocurre un error o no.&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w">  </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ocurrió un error: No se puede dividir por cero.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Este bloque se ejecuta siempre, independientemente de si ocurre un error o no.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -841,6 +881,7 @@ Tamaño de la pila: 3
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-union-y-tipos-de-interseccion">Tipos de Unión y Tipos de Intersección: 🔗</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#type">Type: 🧰</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-genericos">Tipos Genéricos: 🧬</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#errores-try-cath">Errores try/cath ☠️</a></li>
 </ul>
   </nav></div>
 

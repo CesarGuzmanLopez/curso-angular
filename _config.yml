@@ -34,7 +34,7 @@ sphinx:
   html_context:
     default_mode: light
 execute:
-  timeout: 100
+  timeout: 10000
 
 parse:
   myst_enable_extensions:
