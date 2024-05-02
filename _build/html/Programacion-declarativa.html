@@ -346,7 +346,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -362,6 +364,19 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-programacion-declarativa"><strong>Introducción a la Programación Declarativa</strong> 🌟</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-orden-superior"><strong>Funciones de Orden Superior</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-objetos-con-librerias-externas"><strong>Manipulación de Objetos con Librerías Externas</strong> 📚</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-de-funciones"><strong>Composición de Funciones</strong> 🔄</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad-y-estructuras-persistentes"><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-de-control-declarativo"><strong>Flujo de Control Declarativo</strong> 🎭</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -373,6 +388,48 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="programacion-declarativa">
 <h1>Programacion declarativa<a class="headerlink" href="#programacion-declarativa" title="Permalink to this heading">#</a></h1>
+<section id="introduccion-a-la-programacion-declarativa">
+<h2><strong>Introducción a la Programación Declarativa</strong> 🌟<a class="headerlink" href="#introduccion-a-la-programacion-declarativa" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Conceptos fundamentales de la programación declarativa.</p></li>
+<li><p>Enfoque en describir qué hacer en lugar de cómo hacerlo.</p></li>
+</ul>
+</section>
+<section id="funciones-de-orden-superior">
+<h2><strong>Funciones de Orden Superior</strong><a class="headerlink" href="#funciones-de-orden-superior" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Uso de funciones <code class="docutils literal notranslate"><span class="pre">map</span></code>, <code class="docutils literal notranslate"><span class="pre">filter</span></code> y <code class="docutils literal notranslate"><span class="pre">reduce</span></code> en arreglos.</p></li>
+<li><p>Permiten realizar transformaciones y filtrado de datos de manera declarativa.</p></li>
+</ul>
+</section>
+<section id="manipulacion-de-objetos-con-librerias-externas">
+<h2><strong>Manipulación de Objetos con Librerías Externas</strong> 📚<a class="headerlink" href="#manipulacion-de-objetos-con-librerias-externas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Utilización de librerías como Lodash para manipular objetos de forma declarativa.</p></li>
+<li><p>Ejemplos de uso de funciones como <code class="docutils literal notranslate"><span class="pre">filter</span></code>, <code class="docutils literal notranslate"><span class="pre">map</span></code> y <code class="docutils literal notranslate"><span class="pre">groupBy</span></code> en objetos.</p></li>
+</ul>
+</section>
+<section id="composicion-de-funciones">
+<h2><strong>Composición de Funciones</strong> 🔄<a class="headerlink" href="#composicion-de-funciones" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Aplicación de múltiples transformaciones a un valor de manera concisa.</p></li>
+<li><p>Creación de funciones compuestas para realizar operaciones complejas.</p></li>
+</ul>
+</section>
+<section id="inmutabilidad-y-estructuras-persistentes">
+<h2><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒<a class="headerlink" href="#inmutabilidad-y-estructuras-persistentes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Enfoque en mantener los datos inmutables para evitar efectos secundarios.</p></li>
+<li><p>Uso de estructuras de datos persistentes para garantizar la inmutabilidad.</p></li>
+</ul>
+</section>
+<section id="flujo-de-control-declarativo">
+<h2><strong>Flujo de Control Declarativo</strong> 🎭<a class="headerlink" href="#flujo-de-control-declarativo" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Uso de condicionales ternarios para controlar el flujo del programa de manera declarativa.</p></li>
+<li><p>Expresiones condicionales concisas y legibles.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -429,6 +486,25 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-programacion-declarativa"><strong>Introducción a la Programación Declarativa</strong> 🌟</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-de-orden-superior"><strong>Funciones de Orden Superior</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacion-de-objetos-con-librerias-externas"><strong>Manipulación de Objetos con Librerías Externas</strong> 📚</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-de-funciones"><strong>Composición de Funciones</strong> 🔄</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad-y-estructuras-persistentes"><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-de-control-declarativo"><strong>Flujo de Control Declarativo</strong> 🎭</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
