@@ -379,6 +379,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-de-funciones"><strong>Composición de Funciones</strong> 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad-y-estructuras-persistentes"><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-de-control-declarativo"><strong>Flujo de Control Declarativo</strong> 🎭</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monadas">Monadas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monadas-simples">Monadas simples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monada-compleja">Monada compleja</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -450,55 +455,27 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Números duplicados: [ <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">4</span>, <span class=" -Color -Color-Yellow">6</span>, <span class=" -Color -Color-Yellow">8</span>, <span class=" -Color -Color-Yellow">10</span> ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Números pares: [ <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">4</span> ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Suma total: <span class=" -Color -Color-Yellow">15</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">2</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">4</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">6</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">8</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número multiplicado por 2: <span class=" -Color -Color-Yellow">10</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Primer nombre que empieza con &#39;A&#39;: Ana
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿Algun nombre es largo?: <span class=" -Color -Color-Yellow">true</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>¿Todos los nombres son largos?: <span class=" -Color -Color-Yellow">true</span>
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombres ordenados alfabéticamente: [ <span class=" -Color -Color-Green">&#39;Ana&#39;</span>, <span class=" -Color -Color-Green">&#39;Carlos&#39;</span>, <span class=" -Color -Color-Green">&#39;Juan&#39;</span>, <span class=" -Color -Color-Green">&#39;María&#39;</span>, <span class=" -Color -Color-Green">&#39;Pedro&#39;</span> ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Caracteres de los nombres: [
-  <span class=" -Color -Color-Green">&#39;A&#39;</span>, <span class=" -Color -Color-Green">&#39;n&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>, <span class=" -Color -Color-Green">&#39;C&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>,
-  <span class=" -Color -Color-Green">&#39;r&#39;</span>, <span class=" -Color -Color-Green">&#39;l&#39;</span>, <span class=" -Color -Color-Green">&#39;o&#39;</span>, <span class=" -Color -Color-Green">&#39;s&#39;</span>, <span class=" -Color -Color-Green">&#39;J&#39;</span>,
-  <span class=" -Color -Color-Green">&#39;u&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>, <span class=" -Color -Color-Green">&#39;n&#39;</span>, <span class=" -Color -Color-Green">&#39;M&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>,
-  <span class=" -Color -Color-Green">&#39;r&#39;</span>, <span class=" -Color -Color-Green">&#39;í&#39;</span>, <span class=" -Color -Color-Green">&#39;a&#39;</span>, <span class=" -Color -Color-Green">&#39;P&#39;</span>, <span class=" -Color -Color-Green">&#39;e&#39;</span>,
-  <span class=" -Color -Color-Green">&#39;d&#39;</span>, <span class=" -Color -Color-Green">&#39;r&#39;</span>, <span class=" -Color -Color-Green">&#39;o&#39;</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Números duplicados: [ 2, 4, 6, 8, 10 ]
+Números pares: [ 2, 4 ]
+Suma total: 15
+Número multiplicado por 2: 2
+Número multiplicado por 2: 4
+Número multiplicado por 2: 6
+Número multiplicado por 2: 8
+Número multiplicado por 2: 10
+Primer nombre que empieza con &#39;A&#39;: Ana
+¿Algun nombre es largo?: true
+¿Todos los nombres son largos?: true
+Nombres ordenados alfabéticamente: [ &#39;Ana&#39;, &#39;Carlos&#39;, &#39;Juan&#39;, &#39;María&#39;, &#39;Pedro&#39; ]
+Caracteres de los nombres: [
+  &#39;A&#39;, &#39;n&#39;, &#39;a&#39;, &#39;C&#39;, &#39;a&#39;,
+  &#39;r&#39;, &#39;l&#39;, &#39;o&#39;, &#39;s&#39;, &#39;J&#39;,
+  &#39;u&#39;, &#39;a&#39;, &#39;n&#39;, &#39;M&#39;, &#39;a&#39;,
+  &#39;r&#39;, &#39;í&#39;, &#39;a&#39;, &#39;P&#39;, &#39;e&#39;,
+  &#39;d&#39;, &#39;r&#39;, &#39;o&#39;
 ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombres seleccionados: [ <span class=" -Color -Color-Green">&#39;Carlos&#39;</span>, <span class=" -Color -Color-Green">&#39;Juan&#39;</span>, <span class=" -Color -Color-Green">&#39;María&#39;</span> ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombres modificados: [ <span class=" -Color -Color-Green">&#39;Ana&#39;</span> ]
+Nombres seleccionados: [ &#39;Carlos&#39;, &#39;Juan&#39;, &#39;María&#39; ]
+Nombres modificados: [ &#39;Ana&#39; ]
 </pre></div>
 </div>
 </div>
@@ -534,7 +511,7 @@ se recomienda leer mas al respecto en la documentacion oficial</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Yellow">36</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>36
 </pre></div>
 </div>
 </div>
@@ -563,10 +540,8 @@ se recomienda leer mas al respecto en la documentacion oficial</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ <span class=" -Color -Color-Yellow">1</span>, <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">3</span>, <span class=" -Color -Color-Yellow">4</span>, <span class=" -Color -Color-Yellow">5</span> ]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ <span class=" -Color -Color-Yellow">1</span>, <span class=" -Color -Color-Yellow">2</span>, <span class=" -Color -Color-Yellow">3</span>, <span class=" -Color -Color-Yellow">4</span>, <span class=" -Color -Color-Yellow">5</span>, <span class=" -Color -Color-Yellow">6</span> ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1, 2, 3, 4, 5 ]
+[ 1, 2, 3, 4, 5, 6 ]
 </pre></div>
 </div>
 </div>
@@ -574,7 +549,8 @@ se recomienda leer mas al respecto en la documentacion oficial</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Para este caso en especifico tuve que salirme del standar de TypeScript, ya que la inmutabilidad todavia es un debate activo en  typescript y este da ejemplos de inmutabilidad con el standar en su documentacion <a class="reference external" href="https://www.typescriptlang.org/play/?ssl=35&amp;ssc=43&amp;pln=35&amp;pc=49#code/PTAECkEMDdIZQMYCcCWAHALqFBnUlQAbSAOwHMBXSMgU1AHcUMALfUAMxvocgE88MAe1AATGgmJI6LSBgBQIUDkEBbOoPahegiklCCARgCtxGPCMEkA5FgTNStAHSgAKszorBOLGiSqUJDQkWLgKYAiW3qAAtAzMKHZKfAL2WCx0sIQUdPSWNqB2DjSOcnIRJFHuhISCAOqCSIQioAC8oABEABI01cL1jSLtANyligCaOgWkJIK29uR0VTX9TaAz9AA0rrxoNIiomAwo1aBkKNA0YVqTpKA0SH56kAY6afE4WwbikBQ4dNoUBg6Va0LCWOiyK5ICjBFBqbAVDA0SAiEpyJZ1BqrNpdFBAgbDUZgWrMXhTKT4F4UEIqFTU57HJi8AD8oAAgkRZvpNCxcNg8M9XlCaCIKAgAmQCqo0IQaAAPJkI666KViZwASU0AKmJFAUlFCGk7iuJAoKi+eg0oF55Dw9HiiQQt0KCy26V16QpkApspwOCuNrIAmEAGsaDQ0NakJAECHuWjFABVHASqWI-lsMhSWQcFBIKLeCNbZiCeg0C56Xl4diQY7+xQWei6ggGJhxIKgX6pwwmBBmNHlKIqXgAYUiGFIGAA8sZTK1QABvOSgUAqHBkABcHW6vVAK0GGzkAF8Rldh2PEZOZ72QngZlgAI4UJgQtPeSfWksUMjMT7fX6XIoZY6koGDHIQq6QGGBTzLQwagGg3pmNyn7qLOfZbOwDRXPKkAqDKOR0E6uourQq7rhupTnuOV7oRgjhrpKOKdHi+6Elcg5YGopApBkkBZBCbw5mgggBFg778KhSRqJ81IBqkUk9nOTB-IQmgqHwMFFAiSJICQ-GELwzhuHyxFXF8WkLM0XbkKA16mI47BSDQABexSlJxq68AAIjQ7ABC+hkXu+wT2X285hfRTnhm5AAUS4roxW5dD0NR7liB7HgAlKeigkh2txKeFfJOYIbkkG67i6tqxH3pZZHpFcYn3PphA4MZOx7Mg6BYIwJwaJwej3I8eABKhfxTH8OCUXIw6+f5JCBaONGhXRDHrvOuLpQSuVgCZdoNCGvHSXQWFPA8yTWoIggzZ5w4AGJ+OVbIXWSbSRY5zlxQA2ri7QALo5bNvCPWVQQvdGRloL8zCxe0bFA1cyaptFrkeMiFTKiBGDQlEMhvGhN78lcEmpukJ2diQYiVu4oAloIqJEtsuz7D1dOQAKHBcHcco4wQOC8MEkBynT11HVd2D4X4Fz4iGEpXIwLCS3SE4GLKoiyAQ9oJKwNW3AtzRjeTLidazmAk6YKCWCh5O4fhvqUSAOFynhBEboQL7Rm1zuu7KG4YJ10SMGIi3kNEpAiNE+kPKW8tAA">aqui el ejemplo</a> que da
-y tambien para <a class="reference external" href="https://www.typescriptlang.org/play/?#code/PTAEBUE8AcFMGUDGAnAltALqAFgQwM6j4D2AtrKAGYCuAdkXIqrgDaiIGyGXHKguoMsZK0KpaAKBBFi1ZIgqJiAE1gA6CVLABJetFzIMAGlC5+xLMUqgM2CvmrRovLKkJKAbsNjLQ4mzAUAO6oqrTiAOZaprS+tAbIxCG0EaAAFKCwAB64pNAssABcGIEAtCFhkaW4saXxyInJqQCUMb6CAOT40UEu2OzEXmgpNnhYlKjI+Bga0QCC-ILCrH6EZqS8isS0KLBCRNQARiVwoFamAywFiBioXgFwGtIA6mOjbqDkNWKEtrhYACIABKwK7EUDPXgsZQA1YXabDCImQ7ULC4aIIyJw2gWUDA0EscGQ5DQ2HifChCi2KmBIiQaawUizJS0aY4AnEYnQ0AAXjxILBEKhMIA3BIClhsKgub4+cDUEKSaLQNJbB8PmZMSNDrAONR8BRBHCJZppOApdw6DdUNsbLgANZcUxXIgYRHdVSIFgGCg0Ha3W2sQlBfBzWiQeBuyJpAwRQquxHNMVBpKh8ORxFpOxgmVJiQpkNhiNRlJZ6XCvPRc0fP3W23bFiQUyIBSYX52BNYgRCERsfGCmUAiSe73IX1WgP0Av4ADytEbAsJMeQcf5HMVpLz07nC45WY5ueTYJDO8gi+IZcPprA1cIEsIkFkoBHPtAcwACtpCEEpYh+vqKDoG1WRscF8FwJtBGiBsm1wFtYDbC59EMVBEGoUdFh7VhCk0F8xyoCdgOdYN8AAMUmaZyK8AA5ahSB1KZl1XABGUAAB9QAAJnY0AAGYeIAFh4gBWLdjzIiiMCo2BaPo4R8DSZixJI8ipiku4ZLohiFOYgAGSsJVAZwhFoW4g0gItZIY3k+KPFTJOkqz5LSYzYFM5grgs8MnOQStpDmcZJNACJvR2WATDVQhkHQw18FoDo0ScAQfFAgY8gKLIzkOAArXUMHwZltjZUhIAAVQNPg+QAbwkUBQHich4wBeBcEOYZcABIwJAAXzFaJ4FgChsCSPwsDdb4eGQUhCAAAwaoo8RatrxA6mbUrm3IFq1CIZuiWAvHoWxZAifojQ+VQJloFKCAuFlphqGYIAtOEdT1A1omperNvYGpXVQF0-xqCIKBqJtbkazQSvK4Q1HmmyAQAYUgUypQ6vrpAAIV1XAAM+MqKq6L7yCMxI4EMJsOHoQGUnCiBAiQNBMGiSmcSwXHPu7ZY2CGClbX8T6TnsekhCZJ7vGiDUqFgf45GCX9+hCF0C1AR9qFS5RwUinAkn2mHNDurAoZ2PAUkiaHKtAGq6vmprSP+UgOq67rTHcIqMHRsBXjcvEboNsk1iS1AUowTWO2IHK8oiux6CNV6yC4aIzHD3KbkwrnQB-VD+g1rh4qwangb8VkhFwXxznRaRSFRVqCiylOsEzv8ftoWYjYLs2Kth765QAJVwAA7-BwIBD2fdd4v-YuCIx3+UDiDYSaqFQLIMFl3xlH+XATBqXx8jghPpB-bwVafN1pfzlQQbvJZezEedxHUMeBgn50SB6Xh7W-QR+gSCD8BwiQBtMg5HSrAc2hA+QAG0qpEwWgCDGaAaiwm6iYGBNs8R22wIkYgABHZBABdF2z9phiiAA">literales</a> pero son mas complejos que la libreria <code class="docutils literal notranslate"><span class="pre">inmutable</span></code> la cual pareciera se convertira parte del standar</p>
+y tambien para [literales](<a class="reference external" href="https://www.typescriptlang.org/play/?#code/PTAEBUE8AcFMGUDGAnAltALqAFgQwM6j4D2AtrKAGYCuAdkXIqrgDaiIGyGXHKguoMsZK0KpaAKBBFi1ZIgqJiAE1gA6CVLABJetFzIMAGlC5+xLMUqgM2CvmrRovLKkJKAbsNjLQ4mzAUAO6oqrTiAOZaprS+tAbIxCG0EaAAFKCwAB64pNAssABcGIEAtCFhkaW4saXxyInJqQCUMb6CAOT40UEu2OzEXmgpNnhYlKjI+Bga0QCC-ILCrH6EZqS8isS0KLBCRNQARiVwoFamAywFiBioXgFwGtIA6mOjbqDkNWKEtrhYACIABKwK7EUDPXgsZQA1YXabDCImQ7ULC4aIIyJw2gWUDA0EscGQ5DQ2HifChCi2KmBIiQaawUizJS0aY4AnEYnQ0AAXjxILBEKhMIA3BIClhsKgub4+cDUEKSaLQNJbB8PmZMSNDrAONR8BRBHCJZppOApdw6DdUNsbLgANZcUxXIgYRHdVSIFgGCg0Ha3W2sQlBfBzWiQeBuyJpAwRQquxHNMVBpKh8ORxFpOxgmVJiQpkNhiNRlJZ6XCvPRc0fP3W23bFiQUyIBSYX52BNYgRCERsfGCmUAiSe73IX1WgP0Av4ADytEbAsJMeQcf5HMVpLz07nC45WY5ueTYJDO8gi+IZcPprA1cIEsIkFkoBHPtAcwACtpCEEpYh+vqKDoG1WRscF8FwJtBGiBsm1wFtYDbC59EMVBEGoUdFh7VhCk0F8xyoCdgOdY%60%60%60%7Bnote%7D">https://www.typescriptlang.org/play/?#code/PTAEBUE8AcFMGUDGAnAltALqAFgQwM6j4D2AtrKAGYCuAdkXIqrgDaiIGyGXHKguoMsZK0KpaAKBBFi1ZIgqJiAE1gA6CVLABJetFzIMAGlC5+xLMUqgM2CvmrRovLKkJKAbsNjLQ4mzAUAO6oqrTiAOZaprS+tAbIxCG0EaAAFKCwAB64pNAssABcGIEAtCFhkaW4saXxyInJqQCUMb6CAOT40UEu2OzEXmgpNnhYlKjI+Bga0QCC-ILCrH6EZqS8isS0KLBCRNQARiVwoFamAywFiBioXgFwGtIA6mOjbqDkNWKEtrhYACIABKwK7EUDPXgsZQA1YXabDCImQ7ULC4aIIyJw2gWUDA0EscGQ5DQ2HifChCi2KmBIiQaawUizJS0aY4AnEYnQ0AAXjxILBEKhMIA3BIClhsKgub4+cDUEKSaLQNJbB8PmZMSNDrAONR8BRBHCJZppOApdw6DdUNsbLgANZcUxXIgYRHdVSIFgGCg0Ha3W2sQlBfBzWiQeBuyJpAwRQquxHNMVBpKh8ORxFpOxgmVJiQpkNhiNRlJZ6XCvPRc0fP3W23bFiQUyIBSYX52BNYgRCERsfGCmUAiSe73IX1WgP0Av4ADytEbAsJMeQcf5HMVpLz07nC45WY5ueTYJDO8gi+IZcPprA1cIEsIkFkoBHPtAcwACtpCEEpYh+vqKDoG1WRscF8FwJtBGiBsm1wFtYDbC59EMVBEGoUdFh7VhCk0F8xyoCdgOdY```{note}</a>
+Para este caso en especifico tuve que salirme del standar de TypeScript, ya que la inmutabilidad todavia es un debate activo en  typescript y este da ejemplos de inmutabilidad con el standar en su documentacionN8AAMUmaZyK8AA5ahSB1KZl1XABGUAAB9QAAJnY0AAGYeIAFh4gBWLdjzIiiMCo2BaPo4R8DSZixJI8ipiku4ZLohiFOYgAGSsJVAZwhFoW4g0gItZIY3k+KPFTJOkqz5LSYzYFM5grgs8MnOQStpDmcZJNACJvR2WATDVQhkHQw18FoDo0ScAQfFAgY8gKLIzkOAArXUMHwZltjZUhIAAVQNPg+QAbwkUBQHich4wBeBcEOYZcABIwJAAXzFaJ4FgChsCSPwsDdb4eGQUhCAAAwaoo8RatrxA6mbUrm3IFq1CIZuiWAvHoWxZAifojQ+VQJloFKCAuFlphqGYIAtOEdT1A1omperNvYGpXVQF0-xqCIKBqJtbkazQSvK4Q1HmmyAQAYUgUypQ6vrpAAIV1XAAM+MqKq6L7yCMxI4EMJsOHoQGUnCiBAiQNBMGiSmcSwXHPu7ZY2CGClbX8T6TnsekhCZJ7vGiDUqFgf45GCX9+hCF0C1AR9qFS5RwUinAkn2mHNDurAoZ2PAUkiaHKtAGq6vmprSP+UgOq67rTHcIqMHRsBXjcvEboNsk1iS1AUowTWO2IHK8oiux6CNV6yC4aIzHD3KbkwrnQB-VD+g1rh4qwangb8VkhFwXxznRaRSFRVqCiylOsEzv8ftoWYjYLs2Kth765QAJVwAA7-BwIBD2fdd4v-YuCIx3+UDiDYSaqFQLIMFl3xlH+XATBqXx8jghPpB-bwVafN1pfzlQQbvJZezEedxHUMeBgn50SB6Xh7W-QR+gSCD8BwiQBtMg5HSrAc2hA+QAG0qpEwWgCDGaAaiwm6iYGBNs8R22wIkYgABHZBABdF2z9phiiAA) pero son mas complejos que la libreria <code class="docutils literal notranslate"><span class="pre">inmutable</span></code> la cual pareciera se convertira parte del standar</p>
 </div>
 </section>
 <section id="flujo-de-control-declarativo">
@@ -595,6 +571,191 @@ y tambien para <a class="reference external" href="https://www.typescriptlang.or
 </div>
 </div>
 </div>
+</section>
+<section id="monadas">
+<h2>Monadas<a class="headerlink" href="#monadas" title="Permalink to this heading">#</a></h2>
+<p>Una monada es un concepto fundamental en la programación funcional que proporciona una forma de encapsular y manipular valores que pueden tener algún tipo de efecto secundario o estar ausentes. En términos simples, una monada es un contenedor que representa un valor, junto con algún comportamiento asociado que permite realizar operaciones en ese valor de manera segura y predecible.</p>
+<p>En TypeScript, una monada generalmente se implementa como una clase que proporciona métodos para operar en el valor contenido. Estos métodos pueden incluir funciones para transformar el valor, combinar múltiples instancias de la monada, filtrar valores, manejar errores, entre otros.</p>
+<p>El uso de monadas en TypeScript y en la programación funcional en general ayuda a estructurar el código de manera más clara y modular, facilita el manejo de efectos secundarios y errores, y promueve la escritura de código más seguro y robusto.</p>
+<p>En resumen, una monada es un patrón de diseño que proporciona una interfaz consistente para trabajar con valores que pueden ser difíciles de manejar de otra manera, como valores nulos, valores asincrónicos o valores que pueden fallar.</p>
+<p>En TypeScript, podemos implementar monadas utilizando tipos genéricos y funciones que siguen las reglas de las monadas. Por ejemplo, podemos tener una monada Promise para manejar operaciones asíncronas, una monada Option para manejar valores que pueden ser nulos o indefinidos, o una monada Either para manejar operaciones que pueden tener éxito o fracasar.</p>
+<p>La programación con monadas en TypeScript nos permite encadenar operaciones de manera concisa y segura, evitando la necesidad de anidar callbacks o realizar manejo de errores complicado. Además, las monadas nos permiten separar la lógica de la aplicación de los efectos secundarios, lo que hace que nuestro código sea más modular, mantenible y fácil de entender.</p>
+<section id="monadas-simples">
+<h3>Monadas simples<a class="headerlink" href="#monadas-simples" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="c1">// Monada simple con funciones de mapeo y extracción de valor</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">monada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<span class="w">  </span><span class="nx">tipoMaping</span><span class="o">:</span><span class="w"> </span><span class="kt">fn</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">monada</span><span class="p">(</span><span class="nx">fn</span><span class="p">(</span><span class="nx">valor</span><span class="p">)),</span><span class="c1">//fn es una función que se aplica al valor </span>
+<span class="w">  </span><span class="nx">dameValorNoMonadico</span><span class="o">:</span><span class="w"> </span><span class="kt">fn</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">fn</span><span class="p">(</span><span class="nx">valor</span><span class="p">)</span><span class="c1">//fn es una función que recibe el valor</span>
+<span class="p">});</span>
+
+<span class="c1">// Uso de la monada</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">resultadoMonadico</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">monada</span><span class="p">(</span><span class="mf">5</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">tipoMaping</span><span class="p">(</span><span class="nx">valor</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">tipoMaping</span><span class="p">(</span><span class="nx">valor</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">3</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultadoMonadico</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: { tipoMaping: [Function], dameValorNoMonadico: [Function] }</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">resultadoMonadico</span><span class="p">.</span><span class="nx">dameValorNoMonadico</span><span class="p">(</span><span class="nx">valor</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">valor</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 13</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">valores</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">3</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">];</span>
+
+
+<span class="c1">// Función de mapeo</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">duplicar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">valor</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">;</span>
+
+<span class="c1">//duplicar cada valor en el arreglo</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">valoresDuplicados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">monada</span><span class="p">(</span><span class="nx">valores</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">tipoMaping</span><span class="p">(</span><span class="nx">arreglo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">arreglo</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">duplicar</span><span class="p">))</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">dameValorNoMonadico</span><span class="p">(</span><span class="nx">arreglo</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">arreglo</span><span class="p">);</span>
+<span class="nx">valoresDuplicados</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">valor</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">valor</span><span class="p">));</span><span class="w"> </span>
+
+
+<span class="kd">class</span><span class="w"> </span><span class="nx">unOption</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">  </span><span class="kr">constructor</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">value</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Método para map</span>
+<span class="w">  </span><span class="nx">unMap</span><span class="o">&lt;</span><span class="nx">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">fn</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">U</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">unOption</span><span class="o">&lt;</span><span class="nx">U</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span>
+<span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">unOption</span><span class="o">&lt;</span><span class="nx">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">fn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">))</span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">unOption</span><span class="o">&lt;</span><span class="nx">U</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="c1">// Método para obtener el valor o un valor predeterminado</span>
+<span class="w">  </span><span class="nx">getOrElse</span><span class="p">(</span><span class="nx">defaultValue</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">T</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">this.value</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">defaultValue</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Ejemplo de uso de la monada Option</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">maybeNumber</span><span class="o">:</span><span class="w"> </span><span class="kt">unOption</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">unOption</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">5</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">doubledNumber</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">maybeNumber</span><span class="p">.</span><span class="nx">unMap</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">doubledNumber</span><span class="p">.</span><span class="nx">getOrElse</span><span class="p">(</span><span class="mf">0</span><span class="p">));</span><span class="w"> </span><span class="c1">// Output: 10</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">maybeNull</span><span class="o">:</span><span class="w"> </span><span class="kt">unOption</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">unOption</span><span class="o">&lt;</span><span class="kt">number</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">maybeNull</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">unMap</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="nx">getOrElse</span><span class="p">(</span><span class="mf">0</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: 0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{
+  tipoMaping: [Function: tipoMaping],
+  dameValorNoMonadico: [Function: dameValorNoMonadico]
+}
+13
+2
+4
+6
+8
+10
+10
+0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="monada-compleja">
+<h3>Monada compleja<a class="headerlink" href="#monada-compleja" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">private</span><span class="w"> </span><span class="kr">constructor</span><span class="p">(</span><span class="k">private</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">E</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">ok</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">value</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="k">static</span><span class="w"> </span><span class="nx">error</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">error</span><span class="o">:</span><span class="w"> </span><span class="kt">E</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">T</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">error</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">map</span><span class="o">&lt;</span><span class="nx">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">fn</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">U</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">U</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">fn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">));</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">error</span><span class="o">!</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">flatMap</span><span class="o">&lt;</span><span class="nx">U</span><span class="o">&gt;</span><span class="p">(</span><span class="nx">fn</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">T</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">U</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="nx">U</span><span class="p">,</span><span class="w"> </span><span class="nx">E</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">fn</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">error</span><span class="o">!</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">isError</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">error</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">unwrap</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">T</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Tried to unwrap an error result&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">unwrapError</span><span class="p">()</span><span class="o">:</span><span class="w"> </span><span class="nx">E</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">error</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">error</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s2">&quot;Tried to unwrap an ok result&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Ejemplo de uso</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="nx">a</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">Result</span><span class="o">&lt;</span><span class="kt">number</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">b</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;División por cero&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">Result</span><span class="p">.</span><span class="nx">ok</span><span class="p">(</span><span class="nx">a</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nx">b</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">).</span><span class="nx">map</span><span class="p">((</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">value</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">100</span><span class="p">);</span><span class="c1">//105 lo divide entre 2 y le suma 100</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result1</span><span class="p">.</span><span class="nx">isError</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result1</span><span class="p">.</span><span class="nx">unwrapError</span><span class="p">());</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Resultado:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result1</span><span class="p">.</span><span class="nx">unwrap</span><span class="p">());</span>
+<span class="p">}</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">divide</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result2</span><span class="p">.</span><span class="nx">isError</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s2">&quot;Error:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">.</span><span class="nx">unwrapError</span><span class="p">());</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Resultado:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">result2</span><span class="p">.</span><span class="nx">unwrap</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Resultado: 105
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error: División por cero
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Monadas por todas parte
+Esto es un echo estas estructuras estan por todas partes en la programacion funcional y en angular casi cualquir dato que pueda regresar un error o pueda interactuar con ellos regresaran monadas para manejarlo de forma mas organico
+<a class="reference external" href="https://dev.to/airtucha/functors-and-monads-in-plain-typescript-33o1">tutorial of monads</a></p>
+</div>
+</section>
 </section>
 </section>
 
@@ -665,6 +826,11 @@ y tambien para <a class="reference external" href="https://www.typescriptlang.or
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composicion-de-funciones"><strong>Composición de Funciones</strong> 🔄</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inmutabilidad-y-estructuras-persistentes"><strong>Inmutabilidad y Estructuras Persistentes</strong> 🔒</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flujo-de-control-declarativo"><strong>Flujo de Control Declarativo</strong> 🎭</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#monadas">Monadas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monadas-simples">Monadas simples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#monada-compleja">Monada compleja</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

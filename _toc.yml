@@ -16,3 +16,17 @@ parts:
           - file: Propiedades-de-objetos
           - file: Programacion-declarativa
           - file: Programacion-concurrente
+  - caption: Angular
+    chapters:
+      - file: Angular
+        sections:
+          - file: Introduccion-Angular
+          - file: Componentes-angular
+          - file: Directivas-angular
+          - file: Pipes-angular
+          - file: Servicios-angular
+          - file: Routing-angular
+          - file: Formularios-angular
+          - file: Http-angular
+          - file: Testing-angular
+          - file: Angular-CLI
