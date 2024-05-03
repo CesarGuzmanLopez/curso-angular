@@ -385,6 +385,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-ejecutar-la-aplicacion-angular">Paso 4: Ejecutar la Aplicación Angular</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-carpetas-en-un-proyecto-de-angular">Estructura de Carpetas en un Proyecto de Angular</a></li>
 </ul>
             </nav>
         </div>
@@ -439,6 +440,25 @@ document.write(`
 <p>si accedemos podremos ver esto</p>
 <p><img alt="correr" src="_images/localhost.png" /></p>
 </section>
+</section>
+<section id="estructura-de-carpetas-en-un-proyecto-de-angular">
+<h2>Estructura de Carpetas en un Proyecto de Angular<a class="headerlink" href="#estructura-de-carpetas-en-un-proyecto-de-angular" title="Permalink to this heading">#</a></h2>
+<p><img alt="estructura" src="_images/estructura.png" /></p>
+<ol class="arabic simple">
+<li><p><strong>src</strong>: Carpeta principal que contiene todo el código fuente de la aplicación.</p>
+<ul class="simple">
+<li><p><strong>app</strong>: Carpeta donde reside la mayor parte del código de la aplicación, incluyendo componentes, módulos y servicios.</p></li>
+<li><p><strong>assets</strong>: Carpeta para almacenar archivos estáticos como imágenes, fuentes, y archivos de estilos CSS.</p></li>
+<li><p><strong>index.html</strong>: Punto de entrada de la aplicación Angular. Se carga el primer componente y se enlazan los archivos CSS y scripts necesarios.</p></li>
+<li><p><strong>environments</strong>: Carpeta que contiene archivos de configuración para diferentes entornos de la aplicación, como desarrollo y producción. en las versiones mas modernas de angular no se encuentra y se recomienda crearla en caso de necesitarla</p></li>
+</ul>
+</li>
+<li><p><strong>node_modules</strong>: Carpeta que contiene todas las dependencias de terceros instaladas mediante npm.</p></li>
+<li><p><strong>angular.json</strong>: Archivo de configuración para diversas opciones de construcción y desarrollo de la aplicación Angular.</p></li>
+<li><p><strong>package.json</strong>: Archivo de manifiesto del proyecto Node.js. Contiene metadatos del proyecto, dependencias, scripts, etc.</p></li>
+<li><p><strong>tsconfig.json</strong>: Archivo de configuración del compilador TypeScript. Define las opciones de compilación para el proyecto TypeScript.</p></li>
+<li><p><strong><a class="reference external" href="http://README.md">README.md</a></strong>: Documento de texto que proporciona información sobre el proyecto, como descripción, instrucciones de instalación y uso.</p></li>
+</ol>
 </section>
 </section>
 
@@ -503,6 +523,7 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-ejecutar-la-aplicacion-angular">Paso 4: Ejecutar la Aplicación Angular</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-carpetas-en-un-proyecto-de-angular">Estructura de Carpetas en un Proyecto de Angular</a></li>
 </ul>
   </nav></div>
 
