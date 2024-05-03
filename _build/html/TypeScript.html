@@ -386,6 +386,23 @@ document.write(`
 <p>TypeScript emerge como respuesta a la complejidad  del desarrollo web con JavaScript. Es el cimiento de numerosos frameworks como angular. Es importante destacar que el código en TypeScript normalemente se compila a JavaScript, permitiendo una compatibilidad universal con navegadores y entornos de ejecución. TypeScript, como todo lenguaje moderno es multiparadigma y adaptable a diversos estilos de programación. 💻✨
 Todo este contenido fue inspirado de la documentacion oficial de typescript
 <a class="reference external" href="https://www.typescriptlang.org/docs/handbook">https://www.typescriptlang.org/docs/handbook</a></p>
+<p>una vez instalado typecript <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">-g</span> <span class="pre">typescript</span></code>
+escribe el siguente codigo en un <code class="docutils literal notranslate"><span class="pre">archivo.ts</span></code></p>
+<div class="highlight-typescript notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">saludar</span><span class="p">(</span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`Hola, </span><span class="si">${</span><span class="nx">nombre</span><span class="si">}</span><span class="sb">!`</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">saludar</span><span class="p">(</span><span class="s2">&quot;Mundo&quot;</span><span class="p">));</span>
+</pre></div>
+</div>
+<p>para compilarlo a js es</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">    </span>tsc<span class="w">  </span>archivo.ts
+</pre></div>
+</div>
+<p>y para ejecutarlo</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w">   </span>node<span class="w"> </span>archivo.js
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
