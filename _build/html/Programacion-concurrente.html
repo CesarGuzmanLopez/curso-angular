@@ -430,7 +430,7 @@ Promise { &lt;pending&gt; }
 </section>
 <section id="promesas">
 <h2>Promesas 🤝<a class="headerlink" href="#promesas" title="Permalink to this heading">#</a></h2>
-<p>Las promesas son objetos que representan la eventual finalización (o falla) de una operación asincrónica y su valor resultante.
+<p>Las promesas son <span class="xref myst">monadas</span> que representan la eventual finalización (o falla) de una operación asincrónica y su valor resultante.
 <strong>Las promesas simplemente se pueden usar de esta forma</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -445,7 +445,7 @@ Promise { &lt;pending&gt; }
 
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Iniciando operación...&quot;</span><span class="p">);</span>
 
-<span class="nx">tomaTuTiempo</span><span class="p">(</span><span class="mf">2000</span><span class="p">)</span>
+<span class="nx">tomaTuTiempo</span><span class="p">(</span><span class="mf">200</span><span class="p">)</span>
 <span class="w">  </span><span class="p">.</span><span class="nx">then</span><span class="p">((</span><span class="nx">mensaje</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">mensaje</span><span class="p">);</span><span class="w"> </span><span class="c1">// Output: La operación se completó después de 2000 milisegundos.</span>
 <span class="w">  </span><span class="p">})</span>
@@ -489,9 +489,6 @@ las funciones await siempre esperara que acabe una funcion y las funciones async
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Iniciando operación...
 Promise { &lt;pending&gt; }
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La operación se completó después de 2000 milisegundos.
 </pre></div>
 </div>
 </div>
@@ -543,8 +540,8 @@ Promise { &lt;pending&gt; }
 Promise { &lt;pending&gt; }
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Operación completada.
-La operación se completó después de 2000 milisegundos.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La operación se completó después de 200 milisegundos.
+Operación completada.
 La operación se completó después de 2000 milisegundos.
 Tarea 1 completada.
 Tarea 2 completada.
