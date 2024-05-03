@@ -8,14 +8,13 @@ parts:
   - caption: TypeScript
     chapters:
       - file: TypeScript
-        sections:
-          - file: Tipos-de-datos
-          - file: Esctructuras-de-control
-          - file: Funciones
-          - file: Objetos-y-tipos-avanzados
-          - file: Propiedades-de-objetos
-          - file: Programacion-declarativa
-          - file: Programacion-concurrente
+      - file: Tipos-de-datos
+      - file: Esctructuras-de-control
+      - file: Funciones
+      - file: Objetos-y-tipos-avanzados
+      - file: Propiedades-de-objetos
+      - file: Programacion-declarativa
+      - file: Programacion-concurrente
   - caption: Angular
     chapters:
       - file: Introduccion-Angular
