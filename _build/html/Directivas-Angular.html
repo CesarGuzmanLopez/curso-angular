@@ -435,25 +435,25 @@ En este tutorial, nos enfocaremos en las directivas de atributo y estructurales.
   &lt;button (click)=&quot;toggleTable()&quot;&gt;Mostrar/Ocultar Tabla&lt;/button&gt;
 &lt;/div&gt;
 
-@ngIf (showTable) {
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Nombre&lt;/th&gt;
-      &lt;th&gt;Edad&lt;/th&gt;
-    &lt;/tr&gt;
-    @for (let person of people; track person.id) {
-      &lt;tr&gt;
-        &lt;td&gt;{{ person.nombre }}&lt;/td&gt;
-        &lt;td&gt;{{ person.edad }}&lt;/td&gt;
-      &lt;/tr&gt;
-    }
-  &lt;/table&gt;
+@if (showTable) {
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+  &lt;/tr&gt;
+  @for ( person of people; track person.id) {
+  &lt;tr&gt;
+    &lt;td&gt;{{ person.nombre }}&lt;/td&gt;
+    &lt;td&gt;{{ person.edad }}&lt;/td&gt;
+  &lt;/tr&gt;
+  }
+&lt;/table&gt;
 } @else {
-  &lt;ul&gt;
-    @for (let person of people; track person.id) {
-      &lt;li&gt;{{ person.nombre }} ({{ person.edad }} años)&lt;/li&gt;
-    }
-  &lt;/ul&gt;
+&lt;ul&gt;
+  @for ( person of people; track person.id) {
+  &lt;li&gt;{{ person.nombre }} ({{ person.edad }} años)&lt;/li&gt;
+  }
+&lt;/ul&gt;
 }
 
 &lt;div&gt;
@@ -472,13 +472,20 @@ En este tutorial, nos enfocaremos en las directivas de atributo y estructurales.
 </pre></div>
 </div>
 <p>en ts deveria ser algo asi</p>
-<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppComponent</span><span class="w"> </span><span class="p">{</span>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="kd">@Component</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">selector</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;app-root&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">standalone</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">imports</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nx">RouterOutlet</span><span class="p">,</span><span class="w"> </span><span class="nx">ReactiveFormsModule</span><span class="p">,</span><span class="w"> </span><span class="nx">FormsModule</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">templateUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;./app.component.html&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">styleUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;./app.component.css&quot;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppComponent</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="nx">showTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
 <span class="w">  </span><span class="nx">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">25</span><span class="w"> </span><span class="p">},</span>
 <span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">2</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mike&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">30</span><span class="w"> </span><span class="p">},</span>
 <span class="w">  </span><span class="p">];</span>
-<span class="w">  </span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">null</span><span class="w"> </span><span class="p">};</span>
+<span class="w">  </span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="p">};</span>
 
 <span class="w">  </span><span class="nx">addPerson</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">edad</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -487,7 +494,7 @@ En este tutorial, nos enfocaremos en las directivas de atributo y estructurales.
 <span class="w">          </span><span class="o">?</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="k">this</span><span class="p">.</span><span class="nx">people</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">1</span>
 <span class="w">          </span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">;</span>
 <span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">people</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">newId</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="w"> </span><span class="p">});</span>
-<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">null</span><span class="w"> </span><span class="p">};</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="p">};</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 

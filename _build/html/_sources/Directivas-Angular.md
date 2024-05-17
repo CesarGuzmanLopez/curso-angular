@@ -39,25 +39,25 @@ cd mi-proyecto
   <button (click)="toggleTable()">Mostrar/Ocultar Tabla</button>
 </div>
 
-@ngIf (showTable) {
-  <table>
-    <tr>
-      <th>Nombre</th>
-      <th>Edad</th>
-    </tr>
-    @for (let person of people; track person.id) {
-      <tr>
-        <td>{{ person.nombre }}</td>
-        <td>{{ person.edad }}</td>
-      </tr>
-    }
-  </table>
+@if (showTable) {
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Edad</th>
+  </tr>
+  @for ( person of people; track person.id) {
+  <tr>
+    <td>{{ person.nombre }}</td>
+    <td>{{ person.edad }}</td>
+  </tr>
+  }
+</table>
 } @else {
-  <ul>
-    @for (let person of people; track person.id) {
-      <li>{{ person.nombre }} ({{ person.edad }} años)</li>
-    }
-  </ul>
+<ul>
+  @for ( person of people; track person.id) {
+  <li>{{ person.nombre }} ({{ person.edad }} años)</li>
+  }
+</ul>
 }
 
 <div>
@@ -78,13 +78,20 @@ cd mi-proyecto
 en ts deveria ser algo asi
 
 ```ts
+@Component({
+  selector: "app-root",
+  standalone: true,
+  imports: [RouterOutlet, ReactiveFormsModule, FormsModule],
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.css",
+})
 export class AppComponent {
   showTable = true;
   people = [
     { id: 1, nombre: "John", edad: 25 },
     { id: 2, nombre: "Mike", edad: 30 },
   ];
-  newPerson = { nombre: "", edad: null };
+  newPerson = { nombre: "", edad: 0 };
 
   addPerson() {
     if (this.newPerson.nombre && this.newPerson.edad !== null) {
@@ -93,7 +100,7 @@ export class AppComponent {
           ? Math.max(...this.people.map((p) => p.id)) + 1
           : 1;
       this.people.push({ id: newId, ...this.newPerson });
-      this.newPerson = { nombre: "", edad: null };
+      this.newPerson = { nombre: "", edad: 0 };
     }
   }
 
