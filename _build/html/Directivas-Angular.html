@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Introducción a Angular: Instalación, creación del proyecto y estructura de carpetas &#8212; Curso de Angular</title>
+    <title>Tutorial: Creación y Uso de Directivas en Angular &#8212; Curso de Angular</title>
   
   
   
@@ -62,11 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Introduccion-Angular';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Directivas-Angular';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Tutorial: Creación de un Componente Standalone en Angular" href="Componetes-Angular.html" />
-    <link rel="prev" title="Concurrencia" href="Programacion-concurrente.html" />
+    <link rel="prev" title="Tutorial: Creación de un Componente Standalone en Angular" href="Componetes-Angular.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -181,9 +180,9 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Angular</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introducción a Angular: Instalación, creación del proyecto y estructura de carpetas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduccion-Angular.html">Introducción a Angular: Instalación, creación del proyecto y estructura de carpetas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Componetes-Angular.html">Tutorial: Creación de un Componente Standalone en Angular</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Directivas-Angular.html">Tutorial: Creación y Uso de Directivas en Angular</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial: Creación y Uso de Directivas en Angular</a></li>
 </ul>
 
     </div>
@@ -255,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular/issues/new?title=Issue%20on%20page%20%2FIntroduccion-Angular.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/CesarGuzmanLopez/curso-angular/issues/new?title=Issue%20on%20page%20%2FDirectivas-Angular.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/Introduccion-Angular.ipynb" target="_blank"
+      <li><a href="_sources/Directivas-Angular.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -369,7 +368,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introducción a Angular: Instalación, creación del proyecto y estructura de carpetas</h1>
+    <h1>Tutorial: Creación y Uso de Directivas en Angular</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -379,14 +378,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-y-creacion-de-angular">Instalación y creacion de angular</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-instalacion-de-node-js-y-npm">Paso 1: Instalación de Node.js y npm</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-instalacion-de-angular-cli">Paso 2: Instalación de Angular CLI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-creacion-de-un-nuevo-proyecto-angular">Paso 3: Creación de un Nuevo Proyecto Angular</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-ejecutar-la-aplicacion-angular">Paso 4: Ejecutar la Aplicación Angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerrequisitos">Prerrequisitos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-proyecto-angular">Crear un Proyecto Angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directivas-angular-17">Directivas Angular 17</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directiva-if">directiva @if</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-carpetas-en-un-proyecto-de-angular">Estructura de Carpetas en un Proyecto de Angular</a></li>
 </ul>
             </nav>
         </div>
@@ -398,68 +396,118 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-angular-instalacion-creacion-del-proyecto-y-estructura-de-carpetas">
-<h1>Introducción a Angular: Instalación, creación del proyecto y estructura de carpetas<a class="headerlink" href="#introduccion-a-angular-instalacion-creacion-del-proyecto-y-estructura-de-carpetas" title="Permalink to this heading">#</a></h1>
-<p>Angular es un framework de desarrollo de aplicaciones web creado por Google que permite construir aplicaciones de una sola página (SPA) de manera rápida y eficiente. Para comenzar a trabajar con Angular, primero necesitas instalar Angular CLI (Command Line Interface), que es una herramienta de línea de comandos que facilita la creación, el desarrollo y el despliegue de aplicaciones Angular.</p>
-<section id="instalacion-y-creacion-de-angular">
-<h2>Instalación y creacion de angular<a class="headerlink" href="#instalacion-y-creacion-de-angular" title="Permalink to this heading">#</a></h2>
-<section id="paso-1-instalacion-de-node-js-y-npm">
-<h3>Paso 1: Instalación de Node.js y npm<a class="headerlink" href="#paso-1-instalacion-de-node-js-y-npm" title="Permalink to this heading">#</a></h3>
-<p>Antes de instalar Angular CLI, asegúrate de tener Node.js y npm instalados en tu computadora. Puedes descargar e instalar Node.js desde su sitio web oficial: Node.js.</p>
-</section>
-<section id="paso-2-instalacion-de-angular-cli">
-<h3>Paso 2: Instalación de Angular CLI<a class="headerlink" href="#paso-2-instalacion-de-angular-cli" title="Permalink to this heading">#</a></h3>
-<p>Una vez que Node.js y npm estén instalados, puedes instalar Angular CLI globalmente en tu sistema utilizando npm. Abre tu terminal o línea de comandos y ejecuta el siguiente comando</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>@angular/cli
-</pre></div>
-</div>
-<p>Este comando instalará Angular CLI de forma global en tu sistema, lo que te permitirá acceder a él desde cualquier ubicación en tu computadora.</p>
-</section>
-<section id="paso-3-creacion-de-un-nuevo-proyecto-angular">
-<h3>Paso 3: Creación de un Nuevo Proyecto Angular<a class="headerlink" href="#paso-3-creacion-de-un-nuevo-proyecto-angular" title="Permalink to this heading">#</a></h3>
-<p>Después de instalar Angular CLI, puedes crear un nuevo proyecto Angular utilizando el comando <code class="docutils literal notranslate"><span class="pre">ng</span> <span class="pre">new</span></code>. Abre tu terminal o línea de comandos, navega hasta la ubicación donde deseas crear tu proyecto y ejecuta el siguiente comando:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ng<span class="w"> </span>new<span class="w"> </span>nombre-del-proyecto
-</pre></div>
-</div>
-<p>remplaza <code class="docutils literal notranslate"><span class="pre">nombre-del-proyecto</span></code> con el nombre que desees para tu proyecto. Angular CLI creará una nueva carpeta con el nombre del proyecto y generará la estructura inicial del proyecto dentro de ella.</p>
-<p>en este te pedira que selecciones algunas opciones en este caso usaremos sass como editor de hoja de estilos</p>
-<p><img alt="select-css" src="_images/select-sass-angular.png" /></p>
-<p>despues seleccionamos ssg</p>
-<p><img alt="select-ssg" src="_images/select-ssg-angular.png" /></p>
-<p>despues de esto ya estar instalado una version de angular</p>
-<p><img alt="instalado" src="_images/instalado.png" /></p>
-</section>
-<section id="paso-4-ejecutar-la-aplicacion-angular">
-<h3>Paso 4: Ejecutar la Aplicación Angular<a class="headerlink" href="#paso-4-ejecutar-la-aplicacion-angular" title="Permalink to this heading">#</a></h3>
-<p>Una vez que se haya creado el proyecto, navega a la carpeta del proyecto utilizando <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">nombre-del-proyecto</span></code> y luego ejecuta el siguiente comando para iniciar el servidor de desarrollo de Angular:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ng<span class="w"> </span>serve
-</pre></div>
-</div>
-<p><img alt="correr-proyecto" src="_images/correr-proyecto.png" /></p>
-<p>Esto iniciará el servidor de desarrollo y tu aplicación Angular estará disponible en la url especificada por la salida. Puedes abrir esta URL en tu navegador web para ver tu aplicación en funcionamiento.</p>
-<p>en este caso el servidor corre en <code class="docutils literal notranslate"><span class="pre">http://localhost:4200/</span></code></p>
-<p>si accedemos podremos ver esto</p>
-<p><img alt="correr" src="_images/localhost.png" /></p>
-</section>
-</section>
-<section id="estructura-de-carpetas-en-un-proyecto-de-angular">
-<h2>Estructura de Carpetas en un Proyecto de Angular<a class="headerlink" href="#estructura-de-carpetas-en-un-proyecto-de-angular" title="Permalink to this heading">#</a></h2>
-<p><img alt="estructura" src="_images/estructura.png" /></p>
-<ol class="arabic simple">
-<li><p><strong>src</strong>: Carpeta principal que contiene todo el código fuente de la aplicación.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-creacion-y-uso-de-directivas-en-angular">
+<h1>Tutorial: Creación y Uso de Directivas en Angular<a class="headerlink" href="#tutorial-creacion-y-uso-de-directivas-en-angular" title="Permalink to this heading">#</a></h1>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<p>En Angular, las directivas son una de las características más poderosas y flexibles. Las directivas son clases que pueden modificar el DOM y alterar el comportamiento de los elementos HTML. Existen tres tipos principales de directivas en Angular:</p>
 <ul class="simple">
-<li><p><strong>app</strong>: Carpeta donde reside la mayor parte del código de la aplicación, incluyendo componentes, módulos y servicios.</p></li>
-<li><p><strong>assets</strong>: Carpeta para almacenar archivos estáticos como imágenes, fuentes, y archivos de estilos CSS.</p></li>
-<li><p><strong>index.html</strong>: Punto de entrada de la aplicación Angular. Se carga el primer componente y se enlazan los archivos CSS y scripts necesarios.</p></li>
-<li><p><strong>environments</strong>: Carpeta que contiene archivos de configuración para diferentes entornos de la aplicación, como desarrollo y producción. en las versiones mas modernas de angular no se encuentra y se recomienda crearla en caso de necesitarla</p></li>
+<li><p><strong>Directivas de atributo:</strong> Cambian el comportamiento o el aspecto de un elemento, componente o cualquier otra directiva.</p></li>
+<li><p><strong>Directivas estructurales:</strong> Alteran el DOM añadiendo o eliminando elementos.</p></li>
+<li><p><strong>Componentes:</strong> Son directivas con una plantilla asociada.</p></li>
+<li><p><strong>Directivas personalizadas:</strong> Son directivas creadas por el usuario.
+En este tutorial, nos enfocaremos en las directivas de atributo y estructurales.</p></li>
 </ul>
-</li>
-<li><p><strong>node_modules</strong>: Carpeta que contiene todas las dependencias de terceros instaladas mediante npm.</p></li>
-<li><p><strong>angular.json</strong>: Archivo de configuración para diversas opciones de construcción y desarrollo de la aplicación Angular.</p></li>
-<li><p><strong>package.json</strong>: Archivo de manifiesto del proyecto Node.js. Contiene metadatos del proyecto, dependencias, scripts, etc.</p></li>
-<li><p><strong>tsconfig.json</strong>: Archivo de configuración del compilador TypeScript. Define las opciones de compilación para el proyecto TypeScript.</p></li>
-<li><p><strong><a class="reference external" href="http://README.md">README.md</a></strong>: Documento de texto que proporciona información sobre el proyecto, como descripción, instrucciones de instalación y uso.</p></li>
-</ol>
+</section>
+<section id="prerrequisitos">
+<h2>Prerrequisitos<a class="headerlink" href="#prerrequisitos" title="Permalink to this heading">#</a></h2>
+<p>Asegúrate de tener instalado lo siguiente:</p>
+<ul class="simple">
+<li><p>Angular CLI (Command Line Interface)</p></li>
+</ul>
+</section>
+<section id="crear-un-proyecto-angular">
+<h2>Crear un Proyecto Angular<a class="headerlink" href="#crear-un-proyecto-angular" title="Permalink to this heading">#</a></h2>
+<p>Si aún no tienes un proyecto Angular, crea uno con el siguiente comando:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>ng<span class="w"> </span>new<span class="w"> </span>mi-proyecto
+</pre></div>
+</div>
+<p>Navega al directorio del proyecto:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>mi-proyecto
+</pre></div>
+</div>
+</section>
+<section id="directivas-angular-17">
+<h2>Directivas Angular 17<a class="headerlink" href="#directivas-angular-17" title="Permalink to this heading">#</a></h2>
+<section id="directiva-if">
+<h3>directiva &#64;if<a class="headerlink" href="#directiva-if" title="Permalink to this heading">#</a></h3>
+<div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span>&lt;div&gt;
+  &lt;button (click)=&quot;toggleTable()&quot;&gt;Mostrar/Ocultar Tabla&lt;/button&gt;
+&lt;/div&gt;
+
+@ngIf (showTable) {
+  &lt;table&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+    @for (let person of people; track person.id) {
+      &lt;tr&gt;
+        &lt;td&gt;{{ person.nombre }}&lt;/td&gt;
+        &lt;td&gt;{{ person.edad }}&lt;/td&gt;
+      &lt;/tr&gt;
+    }
+  &lt;/table&gt;
+} @else {
+  &lt;ul&gt;
+    @for (let person of people; track person.id) {
+      &lt;li&gt;{{ person.nombre }} ({{ person.edad }} años)&lt;/li&gt;
+    }
+  &lt;/ul&gt;
+}
+
+&lt;div&gt;
+  &lt;h3&gt;Agregar nueva persona&lt;/h3&gt;
+  &lt;label&gt;
+    Nombre:
+    &lt;input [(ngModel)]=&quot;newPerson.nombre&quot; placeholder=&quot;Nombre&quot; /&gt;
+  &lt;/label&gt;
+  &lt;label&gt;
+    Edad:
+    &lt;input [(ngModel)]=&quot;newPerson.edad&quot; type=&quot;number&quot; placeholder=&quot;Edad&quot; /&gt;
+  &lt;/label&gt;
+  &lt;button (click)=&quot;addPerson()&quot;&gt;Agregar&lt;/button&gt;
+&lt;/div&gt;
+
+</pre></div>
+</div>
+<p>en ts deveria ser algo asi</p>
+<div class="highlight-ts notranslate"><div class="highlight"><pre><span></span><span class="k">export</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nx">AppComponent</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">showTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">people</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">25</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">2</span><span class="p">,</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mike&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">30</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">];</span>
+<span class="w">  </span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">null</span><span class="w"> </span><span class="p">};</span>
+
+<span class="w">  </span><span class="nx">addPerson</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">nombre</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="p">.</span><span class="nx">edad</span><span class="w"> </span><span class="o">!==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">newId</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">people</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">0</span>
+<span class="w">          </span><span class="o">?</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(...</span><span class="k">this</span><span class="p">.</span><span class="nx">people</span><span class="p">.</span><span class="nx">map</span><span class="p">((</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">p</span><span class="p">.</span><span class="nx">id</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">1</span>
+<span class="w">          </span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">;</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">people</span><span class="p">.</span><span class="nx">push</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">newId</span><span class="p">,</span><span class="w"> </span><span class="p">...</span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="w"> </span><span class="p">});</span>
+<span class="w">      </span><span class="k">this</span><span class="p">.</span><span class="nx">newPerson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">edad</span><span class="o">:</span><span class="w"> </span><span class="kt">null</span><span class="w"> </span><span class="p">};</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="nx">toggleTable</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="nx">showTable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">showTable</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>ejemplo de switch</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span>@switch (color) { @case (&#39;red&#39;) {
+<span class="p">&lt;</span><span class="nt">app-red-color</span> <span class="p">/&gt;</span>
+} @case (&#39;blue&#39;) {
+<span class="p">&lt;</span><span class="nt">app-blue-color</span> <span class="p">/&gt;</span>
+} @default {
+<span class="p">&lt;</span><span class="nt">app-default-color</span> <span class="p">/&gt;</span>
+} }
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -472,16 +520,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "tslab"
+            mode: "python"
         },
         kernelOptions: {
-            name: "tslab",
+            name: "python3",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'tslab'</script>
+    <script>kernelName = 'python3'</script>
 
                 </article>
               
@@ -494,22 +542,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Programacion-concurrente.html"
+       href="Componetes-Angular.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Concurrencia</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="Componetes-Angular.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Tutorial: Creación de un Componente Standalone en Angular</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -526,14 +565,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalacion-y-creacion-de-angular">Instalación y creacion de angular</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-instalacion-de-node-js-y-npm">Paso 1: Instalación de Node.js y npm</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-instalacion-de-angular-cli">Paso 2: Instalación de Angular CLI</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-3-creacion-de-un-nuevo-proyecto-angular">Paso 3: Creación de un Nuevo Proyecto Angular</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-4-ejecutar-la-aplicacion-angular">Paso 4: Ejecutar la Aplicación Angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerrequisitos">Prerrequisitos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#crear-un-proyecto-angular">Crear un Proyecto Angular</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#directivas-angular-17">Directivas Angular 17</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directiva-if">directiva @if</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-de-carpetas-en-un-proyecto-de-angular">Estructura de Carpetas en un Proyecto de Angular</a></li>
 </ul>
   </nav></div>
 

@@ -19,9 +19,9 @@ parts:
     chapters:
       - file: Introduccion-Angular
       #  sections:
-      #- file: Componentes-angular
-      #- file: Directivas-angular
-      #- file: Pipes-angular
+      - file: Componetes-Angular
+      - file: Directivas-Angular
+      - file: Pipes-angular
       #- file: Servicios-angular
       #- file: Routing-angular
       #- file: Formularios-angular
