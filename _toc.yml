@@ -21,7 +21,8 @@ parts:
       #  sections:
       - file: Componetes-Angular
       - file: Directivas-Angular
-      - file: Pipes-angular
+      - file: Server-Node
+      #- file: Pipes-angular
       #- file: Servicios-angular
       #- file: Routing-angular
       #- file: Formularios-angular
